@@ -300,7 +300,7 @@ table.pager td.sort-by .active:hover { color:#444; }
 /********************** Base Layout */
 
 /* Structure */
-.container-header  { width:100%; background-color:#000000; color:#DDDDDD; }
+.container-header  { width:100%; background-color:#000000; color:#222; }
 .container-header .bar {width:960px; margin:0px auto 0 auto; text-align:left; height:27px; padding-top:3px;}
 .container-header .bar .mini-welcome {float:left;font-weight:bold}
 
@@ -314,7 +314,7 @@ table.pager td.sort-by .active:hover { color:#444; }
 .col-main       { float:right; width:705px; }
 
 /* Style */
-.outline-creator { border:1px solid #bbb; border-bottom-color:#666; background:#fff; }
+.outline-creator { border:1px solid #fff; border-bottom-color:#fff; background:#fff; }
 .col-main .padder{ padding-right:20px; }
 .layout-3columns .padder { padding:0; }
 
@@ -327,13 +327,13 @@ h1#logo                 { float:left; }
 .language-switcher      { float:left; }
 .language-switcher label{ color:#fff; }
 .language-switcher .flag option { background-repeat:no-repeat; background-position:left center; padding-left:20px;margin-left:2px; }
-.toplinks-bar           { background:#444; color:#fff; padding:7px 13px; text-align:right; }
+.toplinks-bar           { background:#fff; color:#000; padding:7px 13px; text-align:right; }
 .toplinks-bar .top-links              { padding-left:8px; }
 .toplinks-bar .top-links,
 .toplinks-bar .top-links li           { display:inline; }
 .toplinks-bar .top-links li           { padding:0 4px 0 1px; }
 .toplinks-bar .top-links a,
-.toplinks-bar .top-links a:hover      { color:#ddd; }
+.toplinks-bar .top-links a:hover      { color:#000; }
 .toplinks-bar .top-links a            { padding:0 7px 0 0; background:url(../images/links_separator.gif) no-repeat 100% 50%; }
 .toplinks-bar .top-links .last a      { padding:0; background:none; }
 .search-bar             { padding:3px 12px 2px 12px; border-bottom:1px double #dedede; background:#efefef;  line-height:1.25em; height:19px; margin-bottom:16px;}

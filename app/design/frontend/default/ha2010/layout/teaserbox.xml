@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">    
+	<teaserbox_xml_index>
+    	    <block type="teaserbox/xml" output="toHtml" name="teaserbox.xml"/>
+   	</teaserbox_xml_index>
+</layout>

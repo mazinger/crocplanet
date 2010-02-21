@@ -1,0 +1,92 @@
+<?php
+/**
+ * Safitech Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Safitech
+ * @package    Safitech_Catalog
+ * @author     S. Mohammed Alsharaf
+ * @copyright  Copyright (c) 2009 Safi Technologies Ltd. (http://www.safitech.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+<?php $_product = $this->getProduct() ?>
+<?php if ($_product->getImage() != 'no_selection' && $_product->getImage()): ?>
+<script type="text/javascript">
+//<![CDATA[
+jQuery.noConflict();
+function jSelectImage(url) {
+	jQuery("#image img").css("z-index","-1").hide();
+	jQuery("#image"+url).css("z-index","1000").show();
+}
+(function($) { 
+	$(function() {
+	jQuery("#image0").css("z-index","100");
+    $(".jqzoom").jqueryzoom({
+		xzoom: <?php echo Mage::getStoreConfig('safitech_jqzoom/general/popup_width'); ?>,		
+		yzoom: <?php echo Mage::getStoreConfig('safitech_jqzoom/general/popup_height'); ?>,		
+		offset: 10,		
+		position: "right",  
+        preload: 1, 
+		lens:1,
+		anim_scale: <?php echo Mage::getStoreConfig('safitech_jqzoom/general/anim_scale'); ?>
+	});
+  });
+})(jQuery);
+//]]>
+</script>
+	<div id="image">
+		<?php if (count($this->getGalleryImages()) > 0): ?>
+		    <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
+		    <?php $style = $i == 0? '' : 'style="z-index:-1;display:none"'; ?>
+		      <div 
+		      onclick="popWin('<?php echo $this->getGalleryUrl($_image) ?>', 'gallery', 'width=300,height=300,left=50,top=50,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;" 
+		      class="jqzoom"><img <?php echo $style; ?> id="image<?php echo $i; ?>" 
+		      width="250px" 
+		      height="250px" 
+		      src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail2', $_image->getFile())->resize(250, 250); ?>" 
+		      alt="<?php echo $this->htmlEscape($_product->getName()) ?>"
+		        jqimg="<?php echo $_image->url; ?>"></div>
+		    <?php ++$i; endforeach; ?>
+		<?php endif; ?>
+	</div>
+
+<?php else: ?>
+<a href="<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>" class="jqzoom" style="" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+<img id="image" src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(265); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" />
+</a>
+<?php endif; ?>
+
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+	<h4>More Views</h4>
+    <ul>
+    <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
+        <li>
+        <a href="#" onclick="jSelectImage('<?php echo $i ?>'); return false;">
+        	<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+		</a>
+        </li>
+    <?php ++$i; endforeach; ?>
+  
+    </ul>
+</div>
+<?php endif; ?>
+
+
+
