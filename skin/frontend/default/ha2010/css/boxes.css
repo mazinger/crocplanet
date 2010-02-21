@@ -36,7 +36,7 @@
 .col2-set .col-1 { float:left; }
 .col2-set .col-2 { float:right; }
 
-.login-box .col-1, .login-box .col-2 {border:1px solid #000000; padding:20px; width:400px; height:253px;}
+.login-box .col-1, .login-box .col-2 {border:1px solid #000000; padding:20px; width:45%; height:253px;}
 .login-box .head-alt2 {background:none; font-size:14px; border-bottom:1px solid #000; padding-left:0}
 
 /* Col2-alt */
