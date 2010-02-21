@@ -32,13 +32,13 @@
 #nav li ul span {white-space:normal; }
 
 /************ 0 LEVEL  ***************/
-#nav li { float:left; margin:0 8px 11px 1px; padding:0 8px; }
-#nav li.active a { color:#000; }
-#nav a { float:left; /*background:url(../images/nav_top_level_arrow.gif) no-repeat 100% 50%*/; padding-right:11px; color:#000; font-weight:bold; }
+#nav li { float:left;/*margin:0 8px;*/ padding:0 8px; }
+#nav li.active a { color:#fff; }
+#nav a { float:left; /*background:url(../images/nav_top_level_arrow.gif) no-repeat 100% 50%*/; padding:0 10px; color:#000; font-weight:bold; }
 #nav li.over a,
 #nav a:hover { color:#000; }
 #nav li.over,
-#nav li.active { margin:0 7px 10px 0; border:0px solid #fff; /*background:#ececec;*/ }
+#nav li.active { /*margin:0 7px 10px 0;*/ border:0px solid #fff; background:#000; }
 
 /************ 1ST LEVEL ************/
 #nav ul li,

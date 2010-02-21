@@ -302,7 +302,7 @@ table.pager td.sort-by .active:hover { color:#444; }
 /* Structure */
 .container-header  { width:100%; background-color:#000000; color:#222; }
 .container-header .bar {width:960px; margin:0px auto 0 auto; text-align:left; height:27px; padding-top:3px;}
-.container-header .bar .mini-welcome {float:left;font-weight:bold;  color:#fff}
+.container-header .bar .mini-welcome {float:left;font-weight:bold;  color:#fff;padding-top:5px;}
 .container-header .bar .mini-welcome a {color:#fff}
 
 
@@ -706,7 +706,7 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 
 
 /* Grid Type */
-.listing-type-grid .product-image img { border:1px solid #dddddd; border-left:0; }
+.listing-type-grid .product-image img { border:1px solid #dddddd; border:0; }
 .listing-type-grid tr.first .product-image img { border-top:none; }
 .listing-type-grid .add-to-compare { display:block; margin:5px 0; background:url(../images/icon_add_to_compare.gif) no-repeat 0 50%; padding-left:22px; color:#6e6969; font-weight:bold; }
 .listing-type-grid .rating-box { float:left; margin-left:0; margin-right:5px; }
