@@ -308,7 +308,7 @@ table.pager td.sort-by .active:hover { color:#444; }
 
 .container 		{ width:960px; margin:0px auto 0 auto; text-align:left; }
 
-.header         { margin-bottom:0; z-index:999; text-align:left;padding-top:11px; }
+.header         { margin-bottom:5px; z-index:999; text-align:left;padding-top:11px; }
 .middle         { min-height:350px; padding:6px 0 50px 0; }
 .layout-1column { clear:both;padding:10px 0; /* 30px 40px 30px;*/ }
 .col-left       { float:left; width:220px; margin-left:16px; }
