@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Safitech Extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Safitech
+ * @package    Safitech_Catalog
+ * @author     S. Mohammed Alsharaf
+ * @copyright  Copyright (c) 2009 Safi Technologies Ltd. (http://www.safitech.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <Safitech_Catalog>
+            <version>1.0.0</version>
+        </Safitech_Catalog>
+    </modules>
+    <global>
+        <helpers>
+            <safitech_catalog>
+                <class>Safitech_Catalog_Helper</class>
+            </safitech_catalog>
+        </helpers>
+    </global>	
+    <frontend>
+        <layout>
+            <updates>
+                <safitech_jqzoom>
+                    <file>safitech_jqzoom.xml</file>
+                </safitech_jqzoom>
+            </updates>
+        </layout>
+    </frontend>
+	<adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <safitech_jqzoom translate="title" module="safitech_catalog">
+                                            <title>Product Gallery "jqZoom"</title>
+                                            <sort_order>50</sort_order>
+                                        </safitech_jqzoom>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+	<!-- Thanks to Phoenix Medien -->
+    <default>
+        <safitech_jqzoom>
+            <general>
+                <enabled>1</enabled>
+                <popup_width>300</popup_width>
+                <popup_height>300</popup_height>
+                <anim_scale>1</anim_scale>
+            </general>
+        </safitech_jqzoom>
+    </default>
+</config>

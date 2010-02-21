@@ -1,0 +1,49 @@
+<!--@subject Bienvenue, {{var customer.name}} ! @-->
+
+<style type="text/css">
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+</style>
+
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+    <table cellspacing="0" cellpadding="0" border="0" width="98%" style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+        <tr>
+            <td align="center" valign="top">
+                <!-- [ header starts here] -->
+                <table cellspacing="0" cellpadding="0" border="0" width="650">
+                    <tr>
+                        <td valign="top">
+                            <a href="{{store url=""}}"><img src="{{skin url="images/logo_email.gif" _area='frontend'}}" alt="{{var order.getStoreGroupName()}}"  style="margin-bottom:10px;" border="0"/></a></td>
+                    </tr>
+                </table>
+
+                <!-- [ middle starts here] -->
+                <table cellspacing="0" cellpadding="0" border="0" width="650">
+                    <tr>
+                        <td valign="top">
+                        <p><strong>Bonjour {{var customer.name}}</strong>,</p>
+                        <p>Bienvenue sur la Boutique de démo. Pour vous identifier lors de vos visites sur notre site, cliquez sur <a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">Connexion</a> ou <a href="{{store url="customer/account/"}}" style="color:#1E7EC8;">Mon compte</a> en haut de toutes les pages du site, puis saisissez votre email et votre mot de passe.</p>
+                        <p style="border:1px solid #BEBCB7; padding:13px 18px; background:#F8F7F5; ">
+                        Pour vous identifier, utilisez les informations suivantes:<br />
+                        E-mail: {{var customer.email}}<br />
+                        Mot de passe: {{var customer.password}}</p>
+                        <p>&nbsp;</p>
+                        <p>En vous connectant à votre compte, vous pourrez :</p>
+                        <ul>
+                            <li>Gagner du temps lors de vos commandes</li>
+                            <li>Suivre l'état de vos commandes</li>
+                            <li>Consulter vos anciennes commandes</li>
+                            <li>Mettre à jour vos coordonnées dans votre compte</li>
+                            <li>Modifier votre mot de passe</li>
+                            <li>Enregistrer plusieurs adresses (pour livrer à vos amis ou membres de la famille !)</li>
+                        </ul>
+                        <p>Si vous avez des questions au sujet de votre compte ou autre, n'hésitez pas à nous contacter par mail: <a style="color: rgb(30, 126, 200);" href="mailto:contact@domaine.com">contact@domaine.com</a> ou par téléphone au <span class="nobr">0 812 123 123</span>.</p>
+                        <p>Merci,</p>
+                        <p><strong>{{var order.getStoreGroupName()}}</strong></p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+</div>
