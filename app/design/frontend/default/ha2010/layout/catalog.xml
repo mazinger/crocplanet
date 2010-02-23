@@ -52,7 +52,7 @@ Default layout, loads most of the pages
                 <action method="setImgSrc"><src>images/media/col_left_callout.jpg</src></action>
                 <action method="setImgAlt" translate="alt" module="catalog"><alt>Did you know? Our customer service is available 24/7</alt></action>
             </block>-->
-			<block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" after="cart_sidebar" template="wishlist/sidebar.phtml"/>
+			<!--block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" after="cart_sidebar" template="wishlist/sidebar.phtml"/-->
             <!--block type="core/template" after="wishlist" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/-->
             
         </reference>
@@ -189,8 +189,8 @@ Product view
 			</block>
 
 
-			<block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" after="cart_sidebar" template="wishlist/sidebar.phtml"/>
-            <block type="core/template" after="wishlist" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/>
+			<!--block type="wishlist/customer_sidebar" name="wishlist_sidebar" as="wishlist" after="cart_sidebar" template="wishlist/sidebar.phtml"/-->
+            <!--block type="core/template" after="wishlist" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/-->
 		</reference>
 		
         <reference name="head">
