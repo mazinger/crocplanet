@@ -53,7 +53,7 @@ Customer account pages, rendered for all tabs in dashboard
             <action method="addLink" translate="label" module="wishlist" ifconfig="wishlist/general/active"><name>wishlist</name><path>wishlist/</path><label>My Wishlist</label></action>
         </reference>
 		<reference name="left">
-            <action method="unsetChild"><name>wishlist_customer_sidebar</name></action>
+            <action method="unsetChild"><name>wishlist_sidebar</name></action>
         </reference>
     </customer_account>
 
