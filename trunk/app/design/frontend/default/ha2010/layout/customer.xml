@@ -163,7 +163,7 @@ Customer account pages, rendered for all tabs in dashboard
     <customer_account>
         <!-- Mage_Customer -->
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-left-croc.phtml</template></action>
         </reference>
 
         <reference name="left">
@@ -172,10 +172,14 @@ Customer account pages, rendered for all tabs in dashboard
                 <action method="addLink" translate="label" module="customer"><name>account_edit</name><path>customer/account/edit/</path><label>Account Information</label></action>
                 <action method="addLink" translate="label" module="customer"><name>address_book</name><path>customer/address/</path><label>Address Book</label></action>
             </block>
-            <action method="unsetChild"><name>tags_popular</name></action>
+			
         </reference>
+		
         <reference name="left">
-          <action method="unsetChild"><name>left.permanent.callout</name></action>
+			<action method="unsetChild"><name>tags_popular</name></action>
+			<action method="unsetChild"><name>catalog_compare_sidebar</name></action>
+			<action method="unsetChild"><name>catalog_wistlist_sidebar</name></action>
+          	<action method="unsetChild"><name>left.permanent.callout</name></action>
         </reference>
     </customer_account>
 
@@ -186,9 +190,11 @@ Customer account home dashboard layout
     <customer_account_index>
         <update handle="customer_account"/>
         <!-- Mage_Customer -->
+		
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-left-croc.phtml</template></action>
         </reference>
+		
         <reference name="content">
             <block type="customer/account_dashboard" name="customer_account_dashboard" template="customer/account/dashboard.phtml">
                 <block type="customer/account_dashboard_hello" name="customer_account_dashboard_hello" as="hello" template="customer/account/dashboard/hello.phtml"/>
@@ -200,6 +206,7 @@ Customer account home dashboard layout
                 <block type="core/template" name="customer_account_dashboard_info2" as="info2" />
             </block>
         </reference>
+		
 
     </customer_account_index>
 

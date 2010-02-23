@@ -25,6 +25,9 @@
  */
 ?>
 <h2>Address Book</h2>
+
+<div id="address" class="croc-border" style="">
+
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <table cellspacing="0" width="100%">
     <tr>
@@ -81,6 +84,8 @@
 <div class="buttons-container">
     <a href="<?php echo $this->getUrl('customer/account/') ?>" class="float-left">&laquo; <?php echo $this->__('Back') ?></a>
     <input type="button" onclick="window.location='<?php echo $this->getUrl('customer/address/form') ?>';" value="<?php echo $this->__('New Address') ?>" class="input-button">
+</div>
+
 </div>
 <script type="text/javascript">
     function deleteAddress(addressId) {

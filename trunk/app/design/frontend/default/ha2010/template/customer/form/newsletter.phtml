@@ -29,10 +29,16 @@
 <div class="page-head">
     <h3><?php echo $this->__('Newsletter Subscription') ?></h3>
 </div>
+
+<div id="newsletter" class="croc-border" style="">
+
 <form action="<?php echo $this->getAction() ?>" method="post" id="form-validate">
     <?php echo $this->getBlockHtml('formkey')?>
     <p><input type="checkbox" name="is_subscribed" id="subscription" value="1" title="<?php echo $this->__('General Subscription') ?>"  <?php if($this->getIsSubscribed()): ?> checked="checked"<?php endif ?>/> <label for="subscription"><?php echo $this->__('General Subscription') ?></label></p>
-<div class="button-set">
+    
+    <input class="croc-button"  name="submit" type="submit" value="<?php echo $this->__('Valider') ?>"/>
+    
+<div class="button-set no-display">
     <a href="<?php echo $this->getBackUrl() ?>" class="f-left">&laquo; <?php echo $this->__('Back') ?></a>
     <input type="image" src="<?php echo $this->getSkinUrl('images/btn_save.gif') ?>" alt="<?php echo $this->__('Save') ?>"/>
 </div>
@@ -40,4 +46,6 @@
 <script type="text/javascript">
     var dataForm = new VarienForm('form-validate', true);
 </script>
+</div>
+
 </div>
