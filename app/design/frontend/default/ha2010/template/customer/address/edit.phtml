@@ -37,6 +37,9 @@
     <h3><?php echo $this->getTitle() ?></h3>
 </div>
 <?php endif; ?>
+
+<div id="address" class="croc-border" style="">
+
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <form action="<?php echo $this->getSaveUrl() ?>" method="post" id="form-validate">
     <?php echo $this->getBlockHtml('formkey')?>
@@ -129,12 +132,18 @@
             </li>
         </ul>
     </fieldset>
-    <div class="button-set">
+    
+    <input class="croc-button"  name="submit" type="submit" value="<?php echo $this->__('Valider') ?>"/>
+    
+    <div class="button-set no-display">
         <p class="required"><?php echo $this->__('* Required Fields') ?></p>
         <a href="<?php echo $this->getBackUrl() ?>" class="f-left">&laquo; <?php echo $this->__('Back') ?></a>
         <input  type="image" src="<?php echo $this->getSkinUrl('images/btn_save.gif') ?>" alt="<?php echo $this->__('Save Address') ?>" />
     </div>
 </form>
+
+</div>
+
 <script type="text/javascript">
     var dataForm = new VarienForm('form-validate', true);
     new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>);

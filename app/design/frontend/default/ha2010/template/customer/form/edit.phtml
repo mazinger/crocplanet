@@ -28,6 +28,10 @@
 <div class="page-head">
     <h3><?php echo $this->__('Edit Account Information') ?></h3>
 </div>
+
+
+<div id="edit" class="croc-border" style="">
+
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <form action="<?php echo $this->getUrl('customer/account/editPost') ?>" method="post" id="form-validate">
 <?php echo $this->getBlockHtml('formkey')?>
@@ -80,12 +84,18 @@
         </li>
     </ul>
 </fieldset>
-<div class="button-set">
+
+<input class="croc-button"  name="submit" type="submit" value="<?php echo $this->__('Valider') ?>"/>
+
+<div class="button-set no-display">
     <a href="<?php echo $this->getBackUrl() ?>" class="f-left">&laquo; <?php echo $this->__('Back') ?></a>
     <p class="required"><?php echo $this->__('* Required Fields') ?></p>
     <input type="image" src="<?php echo $this->getSkinUrl('images/btn_save.gif');?>" alt="<?php echo $this->__('Save') ?>"/>
 </div>
 </form>
+
+</div>  
+
 <script type="text/javascript">
     var dataForm = new VarienForm('form-validate', true);
     function setPasswordForm(arg){

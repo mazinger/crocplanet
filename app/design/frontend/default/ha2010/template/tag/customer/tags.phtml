@@ -29,6 +29,9 @@
 <div class="page-head">
     <h3><?php echo $this->__('My Tags') ?></h3>
 </div>
+
+<div id="tags" class="croc-border" style="">
+
 <?php if($this->getTags()): ?>
     <p><?php echo $this->__('Click on a tag to view your corresponding products.') ?></p>
         <div class="content">
@@ -42,7 +45,8 @@
 <?php else: ?>
     <p><?php echo $this->__('You have not tagged any products yet.') ?></p>
 <?php endif; ?>
-<div class="button-set">
+<div class="button-set no-display">
     <a href="<?php echo $this->getBackUrl() ?>" class="f-left">&laquo; <?php echo $this->__('Back') ?></a>
+</div>
 </div>
 </div>

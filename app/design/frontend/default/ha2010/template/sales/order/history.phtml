@@ -30,6 +30,9 @@
 <div class="page-head">
     <h3><?php echo $this->__('My Orders') ?></h3>
 </div>
+
+<div id="order" class="croc-border" style="">
+
 <?php if($_orders->getSize()): ?>
 <table cellspacing="0" class="data-table" id="my-orders-table">
     <thead>
@@ -68,6 +71,6 @@
 <div class="padder"> <p><?php echo $this->__('You have placed no orders.'); ?></p></div>
 <?php endif ?>
 
-
+</div>
     
 </div>

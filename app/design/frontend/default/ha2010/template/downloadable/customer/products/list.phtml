@@ -34,6 +34,9 @@
 <div class="page-head">
     <h3><?php echo Mage::helper('downloadable')->__('My Downloadable Products') ?></h3>
 </div>
+
+<div id="list" class="croc-border" style="">
+
 <?php echo $this->getChildHtml('pager'); ?>
 <?php if(count($_items)): ?>
 <table cellspacing="0" class="data-table" id="my-downloadable-products-table">
@@ -64,6 +67,10 @@
     <p><?php echo Mage::helper('downloadable')->__('You have not purchased any downloadable products yet.'); ?></p>
 <?php endif; ?>
 <?php echo $this->getChildHtml('pager'); ?>
-<div class="button-set">
+
+
+<div class="button-set no-display">
     <a href="<?php echo $this->getBackUrl() ?>" class="f-left">&laquo; <?php echo $this->__('Back') ?></a>
+</div>
+
 </div>

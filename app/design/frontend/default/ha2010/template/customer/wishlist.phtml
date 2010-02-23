@@ -26,6 +26,9 @@
 ?>
 
 <h2><?php echo $this->__('Wishlist') ?></h2>
+
+<div id="wishlist" class="croc-border" style="">
+
 <?php if($wishlist->getSize()): ?>
 <form action="<?php echo $this->getUrl('customer/wishlist/updatePost') ?>" method="post">
     <table cellspacing="0" width="100%" class="data-table">
@@ -54,7 +57,9 @@
 </form>
 <?php else: ?>
     <p><?php echo $this->__('You have placed no products yet.') ?></p>
-<div class="button-set">
+<div class="button-set no-display">
     <a href="<?php echo $this->getUrl('customer/account') ?>" class="f-left">&laquo; Back - link to the previously viewed page</a>
 </div>
 <?php endif ?>
+
+</div>

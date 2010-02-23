@@ -57,6 +57,7 @@ table .col-1, table .col-2, table .col-3, table .col-4 { float:none !important; 
 .col4-set td.spacer { width:4%; }
 
 
+
 /********************** Form */
 
 /* Form Elements */
@@ -93,7 +94,7 @@ input.checkbox            { margin-right:3px; }
 .form-list li .input-box textarea   { width:250px; }
 .form-list li .input-box select     { width:256px; }
 .form-list li.addElement            { border-top:1px solid #DDD; padding-top:10px; }
-.group-select li                    { margin:0 8px 10px 0; padding-left:8px; }
+.group-select li                    { margin:0 8px 10px 0; /*padding-left:8px;*/ }
 .group-select li .input-box         { float:left; width:275px; }
 .group-select li .input-text,
 .group-select li select,
@@ -105,7 +106,7 @@ input.checkbox            { margin-right:3px; }
 
 
 /* Form Messages */
-.validation-advice, .required { color:#EB340A; }
+.validation-advice, .required { /*color:#EB340A;*/ }
 .validation-advice { clear:both; min-height:15px; margin-top:3px; background:url(../images/validation_advice_bg.gif) no-repeat 2px 4px; padding-left:13px; font-size:10px; font-weight:bold; line-height:1.25em; }
 .validation-failed { border:1px solid #eb340a !important; background:#faebe7 !important; }
 label.required { font-weight:bold; }
@@ -178,8 +179,8 @@ p.required { text-align:right; }
 .page-head h3, .page-head-alt h3 {
     margin:0;
     font-size:23px;
-    font-weight:normal !important;
-    text-transform:none  !important;
+    font-weight:bold !important;
+    text-transform:none;
     text-align:left;
     }
 .button-level h3 { /* heading level with buttons */
@@ -189,8 +190,8 @@ p.required { text-align:right; }
 
 .head-alt           { margin-bottom:5px; }
 .head-alt .title    { color:#4f8100; font-size:1.3em; }
-.head-alt2          { margin-bottom:12px; background:#f1f1f1; padding:2px 10px; font-size:1.1em; }
-.head-alt2 .title   { font-size:1.1em;  }
+.head-alt2          { margin-bottom:12px; /*background:#f1f1f1;*/ padding:2px; font-size:1.1em;border-bottom:1px solid; }
+.head-alt2 .title   { font-size:20px; font-weight:normal;}
 .head-alt3          { margin-bottom:8px; border-bottom:1px solid #ddd; }
 
 
@@ -315,6 +316,57 @@ table.pager td.sort-by .active:hover { color:#444; }
 .col-right       { float:right; width:195px; margin-right:13px; }
 .col-main       { float:right; width:705px; }
 
+.layout-2columns {}
+.layout-3columns {}
+
+.page-head-croc h3 {
+clear:both; font-size:23px;clear:both;
+font-family:century gothic;
+font-size:30px;
+margin:17px 17px auto;}
+
+.layout-2columns-croc {border:1px solid #000; padding:20px; }
+.layout-2columns-croc .col-left {margin:0}
+.layout-2columns-croc .col-main {width:670px;}
+.layout-2columns-croc .col-main .padder {padding:0}
+
+.layout-2columns-croc .sidebar .content {background:none; padding:0;}
+.layout-2columns-croc .base-mini {border:none}
+.layout-2columns-croc .page-head {margin:0}
+.layout-2columns-croc .page-head h3 {font-weight:normal !important; color:#888;font-family:century gothic;}
+.layout-2columns-croc .head-alt .title {color:#000; font-weight:normal}
+.layout-2columns-croc .head-alt2 {background-color:#F3F3F3;border:0;}
+.layout-2columns-croc .head-alt2 .title  {font-size:10px; text-transform: uppercase }
+
+.croc-button {
+	background-color:#000000;
+	border:0 none;
+	color:#FFFFFF;
+	font-size:13px;
+	font-weight:bold;
+	padding:1px 20px;
+	text-transform:uppercase;
+	}
+a.croc-button , a.croc-button:hover {color:#FFFFFF; }
+
+.croc-button2 {
+	background-color:#555;
+	border:0 none;
+	color:#FFFFFF;
+	font-size:10px;
+	font-weight:bold;
+	padding:1px 20px;
+	/*text-transform:uppercase;*/
+	}
+a.croc-button2 , a.croc-button2:hover {color:#FFFFFF; }
+
+.croc-valider, .croc-valider a {color:#FFFFFF;background-color:#000;  }
+.croc-delete , .croc-delete a {color:#CCC;background-color:#555; }
+.croc-valider, .croc-delete {font-size:9px; width:120px; text-transform:uppercase;white-space:nowrap}
+
+.croc-border {border:1px solid #000; padding:20px; min-height:300px}
+
+
 /* Style */
 .outline-creator { border:1px solid #fff; border-bottom-color:#fff; background:#fff; }
 .col-main .padder{ padding-right:20px; }
@@ -332,7 +384,7 @@ h1#logo                 { float:left; }
 .toplinks-bar           { background:#fff; color:#000; padding-bottom:2px; text-align:right; }
 .toplinks-bar .top-links              { padding-left:8px; }
 .toplinks-bar .top-links,
-.toplinks-bar .top-links li           { display:inline; }
+.toplinks-bar .top-links li           { display:inline; text-transform:capitalize;}
 .toplinks-bar .top-links li           { padding:0 4px 0 1px; }
 .toplinks-bar .top-links a,
 .toplinks-bar .top-links a:hover      { color:#000; }
@@ -1159,9 +1211,9 @@ tr.grand_total td, p.grand_total { padding-top:5px; padding-bottom:5px; }
 .account-nav .head { border:none; background:#666; }
 .account-nav .head .title { color:#fff; }
 .account-nav li a, .account-nav li.on { padding:3px 0;  }
-.account-nav li a { display:block; border-bottom:1px solid #ddd; }
+.account-nav li a { display:block;/* border-bottom:1px solid #ddd;*/ }
 .account-nav li a, .account-nav li a:hover { color:#5f5d5c; text-decoration:none; }
-.account-nav li.on { border-bottom:1px solid #ddd; font-weight:bold; }
+.account-nav li.on { /*border-bottom:1px solid #ddd;*/ font-weight:bold; color:#3460A9}
 .account-nav li.on a { border:none; padding:0; }
 .account-nav li.on a, .account-nav li.on a:hover { color:#ea7900; }
 .account-nav li.last, .account-nav li.last a { border-bottom:0; }
