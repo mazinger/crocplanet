@@ -178,7 +178,7 @@ Customer account pages, rendered for all tabs in dashboard
         <reference name="left">
 			<action method="unsetChild"><name>tags_popular</name></action>
 			<action method="unsetChild"><name>catalog_compare_sidebar</name></action>
-			<action method="unsetChild"><name>catalog_wistlist_sidebar</name></action>
+			<action method="unsetChild"><name>wistlist_sidebar</name></action>
           	<action method="unsetChild"><name>left.permanent.callout</name></action>
         </reference>
     </customer_account>
