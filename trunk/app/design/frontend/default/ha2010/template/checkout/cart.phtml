@@ -34,6 +34,9 @@
 <div class="page-head">
     <h3><?php echo $this->__('Shopping Cart') ?></h3>
 </div>
+
+<div id="cart" class="croc-border" style="">
+
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
 <table cellspacing="0" id="shopping-cart-table" class="data-table box-table shopping-cart">
@@ -118,4 +121,4 @@
     </div>
 </div>
 
-<div class="clear"></div>
+</div>
