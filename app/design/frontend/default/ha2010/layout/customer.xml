@@ -172,14 +172,15 @@ Customer account pages, rendered for all tabs in dashboard
                 <action method="addLink" translate="label" module="customer"><name>account_edit</name><path>customer/account/edit/</path><label>Account Information</label></action>
                 <action method="addLink" translate="label" module="customer"><name>address_book</name><path>customer/address/</path><label>Address Book</label></action>
             </block>
-			
+	    
+		<action method="unsetChild"><name>tags_popular</name></action>
+		<action method="unsetChild"><name>catalog_compare_sidebar</name></action>
+		<action method="unsetChild"><name>wistlist_sidebar</name></action>
+          	<action method="unsetChild"><name>left.permanent.callout</name></action>		
         </reference>
 		
-        <reference name="left">
-			<action method="unsetChild"><name>tags_popular</name></action>
-			<action method="unsetChild"><name>catalog_compare_sidebar</name></action>
-			<action method="unsetChild"><name>wistlist_sidebar</name></action>
-          	<action method="unsetChild"><name>left.permanent.callout</name></action>
+        <reference name="right">
+		
         </reference>
     </customer_account>
 

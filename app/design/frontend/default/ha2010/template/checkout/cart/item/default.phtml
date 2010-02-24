@@ -26,12 +26,12 @@
 ?>
 <?php $_item = $this->getItem()?>
 <tr>
-    <td>
+    <td class="a-center">
         <a href="<?php echo $this->getProductUrl() ?>">
             <img src="<?php echo $this->getProductThumbnail()->resize(75); ?>" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" width="75" />
         </a>
     </td>
-    <td class="attributes-col">
+    <td class="attributes-col" valign="middle">
         <h4 class="title"><a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->getProductName() ?></a></h4>
 
        <!-- item custom options -->

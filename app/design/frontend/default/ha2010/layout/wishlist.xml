@@ -52,9 +52,9 @@ Customer account pages, rendered for all tabs in dashboard
         <reference name="customer_account_navigation">
             <action method="addLink" translate="label" module="wishlist" ifconfig="wishlist/general/active"><name>wishlist</name><path>wishlist/</path><label>My Wishlist</label></action>
         </reference>
-		<reference name="left">
+	<!--reference name="left">
             <action method="unsetChild"><name>wishlist_sidebar</name></action>
-        </reference>
+        </reference-->
     </customer_account>
 
 <!--
