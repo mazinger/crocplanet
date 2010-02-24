@@ -34,7 +34,7 @@
 <?php if (!Mage::registry('current_category')) return ?>
 <?php $_categories=$this->getCurrentChildCategories() ?>
 <?php $_count = is_array($_categories)?count($_categories):$_categories->count(); ?>
-<?php if($_count): ?>
+<?php if(1 || $_count): ?>
 <div class="box layered-nav">
         <div class="head">
             <h3><?php echo $this->__('Browse By') ?></h3>
