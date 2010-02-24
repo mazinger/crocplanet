@@ -217,7 +217,7 @@ td.label        { font-weight:bold; }
 .data-table .odd  { background:#fff }
 .data-table .even { background:#fcfcfc; }
 .data-table tr.last th,
-.data-table tr.last td { border-bottom:0 !important; }
+.data-table tr.last td { border-bottom:0 !important;vertical-align:middle; }
 .data-table th { padding:2px 8px; white-space:nowrap; font-size:10px; text-transform:uppercase; }
 .data-table th.wrap { white-space:normal; }
 .data-table th a,
@@ -280,9 +280,16 @@ td.label        { font-weight:bold; }
 
 /********************** Pager */
 
-table.pager select  { width:50px; margin:0 3px; }
-table.pager { width:100%; background:url(../images/pager_bg.gif) repeat-x 0 100% #f9f9f9; }
-table.pager td { width:33%; border-top:1px solid #ddd; padding:4px 8px; vertical-align:middle; }
+table.pager select  { width:50px; margin:0 3px; border:none;border-collapse:collapse; }
+table.pager { width:100%; background:url(../images/pager_bg_black.gif) repeat-x 0 100% #000; color:#FFF}
+table.pager td { /*width:33%;border-top:0px solid #ddd;padding:4px 8px;*/ 
+	vertical-align:middle; 
+	text-align:center;
+	white-space:nowrap;
+	padding:0 3px;
+	width:25%;
+	}
+	
 table.pager td.pages { text-align:center; }
 table.pager ol,
 table.pager li { display:inline; }
@@ -554,7 +561,7 @@ h1#logo                 { float:left; }
 /************************* Prices */
 .price { white-space:nowrap !important; }
 
-.price-box { padding:5px 0 10px; }
+.price-box { /*padding:5px 0 10px; */}
 .price-box .price { font-size:13px; font-weight:bold; color:#396f00; }
 
 /* Regular price */
@@ -562,22 +569,27 @@ h1#logo                 { float:left; }
 .regular-price .price { font-size:13px; font-weight:bold; color:#396f00; }
 
 /* Old price */
-.old-price { margin:0; }
-.old-price .price-label { font-size:12px; font-weight:bold; white-space:nowrap; }
-.old-price .price { font-weight:bold; font-size:13px; color:#396f00; text-decoration:line-through; }
+.old-price { font-size:13px; float:left; color:#444}
+.old-price .price-label { font-size:12px; font-weight:bold; white-space:nowrap;display:none; }
+.old-price .price { 
+	font-weight:bold; font-size:13px; color:#396f00; text-decoration:line-through; 
+	margin-right:3px;
+	padding-right:3px;
+	border-right:1px solid;}
 
 /* Special price */
-.special-price { margin:0; padding:3px 0; }
-.special-price .price-label { font-size:11px; font-weight:bold; text-transform:uppercase; white-space:nowrap; color:#000; }
-.special-price .price { font-size:13px; font-weight:bold; }
+.special-price { margin:0; /*padding:3px 0;*/ }
+.special-price .price-label { font-size:11px; font-weight:bold; text-transform:uppercase; white-space:nowrap; color:#000; display:none; }
+.special-price .price { font-size:13px; font-weight:bold;  float:left; color:#000;padding-right:4px;}
 
 /* Minimal price (as low as) */
 .minimal-price { margin:0; }
 .minimal-price .price-label { font-size:12px; font-weight:bold; white-space:nowrap; }
 
-a.minimal-price-link { display:block; font-size:12px; text-decoration:underline; color:#444; }
+a.minimal-price-link { display:block; font-size:12px; text-decoration:underline; color:#444; 
+	}
 a.minimal-price-link:hover { color:#444; }
-a.minimal-price-link .label {}
+a.minimal-price-link .label {display:none}
 a.minimal-price-link .price { font-weight:normal; color:#444; }
 
 /* Including tax */
@@ -624,16 +636,18 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 /********************** Catalog Listing */
 .catalog-listing .product-image img    { display:block; }
 .catalog-listing h5 {
-    margin-bottom:.4em;
-    font-size:1.1em;
+    margin-bottom:0;
+    font-size:13px;
     font-weight:normal;
     width:159px; /* In case product is extra really long */
-    padding-right:10px;
+    /*padding-right:10px;*/
     overflow:hidden; /* In case product is extra really long */
     }
 .catalog-listing h5 a, .catalog-listing h5 a:hover {
-    color:#444;
-    text-decoration:underline;
+    color:#222222;
+	font-family:century gothic;
+	font-weight:bold;
+	text-decoration:none;
     }
 .catalog-listing .add-to {
     margin:.2em 0 1.8em 0;
@@ -657,7 +671,7 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 .catalog-listing .ratings { margin-bottom:.6em; }
 
 /* Generic Product Grid */
-.generic-product-grid           { width:100%; }
+.generic-product-grid           { width:100%; height:400px;}
 .generic-product-grid td        { width:25%; }
 .generic-product-grid td.empty-product { border-right:0; }
 
@@ -911,7 +925,7 @@ select.address-select {width:630px}
 .cross-sell-block .product-shop     { width:135px; }
 .cross-sell-block .price-box        { margin:0 0 6px 0; font-size:.8em; }
 .cross-sell-blank                   { display:inline; float:left; width:220px; border:0; padding:0; background:none; }
-.cart-collateral-block              { float:right; width:655px; }
+.cart-collateral-block              { /*float:right;*/ width:655px; margin-left:260px; }
 .shopping-cart                      { margin-bottom:0; }
 .shopping-cart th, .shopping-cart td{ padding-left:13px; padding-right:13px; }
 .shopping-cart tr.error             { background:#FDE6E0 !important; }

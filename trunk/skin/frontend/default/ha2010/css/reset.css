@@ -47,6 +47,7 @@ td          { vertical-align:top; }
 
 /* Paragraph */
 p           { margin-bottom:.9em; }
+P.product-image {margin:0}
 address     { margin-bottom:.4em; font-style:normal; line-height:1.4em; }
 cite        { font-style:normal; font-size:10px;}
 q:before, 
