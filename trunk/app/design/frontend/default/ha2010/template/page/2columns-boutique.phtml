@@ -55,25 +55,34 @@
     <div class="container">
         <?php echo $this->getChildHtml('header') ?>
         <div class="outline-creator">
-            <div class="toplinks-bar">
+            <div class="toplinks-bar" style="padding-bottom:4px;">
             	<?php echo $this->getChildHtml('topMenu') ?>
                 <?php echo $this->getChildHtml('store_language') ?>
                 <?php echo $this->getChildHtml('topLinks') ?>
              </div>
-            <div class="search-bar2l">
-                <?php echo $this->getChildHtml('breadcrumbs') ?>
-            </div>
-            <div class="page-head-boutique" style="">
+           
+            
+            <!--div class="page-head-boutique" style="">
                 <h3><?php echo $this->__('My Account') ?></h3>
-            </div>
+            </div-->
+            
             <div class="middle layout-2columns layout-2columns-boutique">
                 <div class="col-left sidebar" id="col-left">
                     <?php echo $this->getChildHtml('left') ?>&nbsp;
                 </div>
                 <div class="col-main" id="main">
                     <?php echo $this->getChildHtml('global_messages') ?>
+                     <div class="search-bg" >
+						<?php echo $this->getChildHtml('breadcrumbs') ?>
+                    </div>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
+            </div>
+            <div class="toolbar-bottom" id="toolbar2">
+            	<?php echo $this->getLayout()
+				->getBlock('product_list_toolbar')
+				->setTemplate('catalog/product/list/toolbar2.phtml')
+				->toHtml(); ?>
             </div>
         </div>
         <div class="footer" id="footer">

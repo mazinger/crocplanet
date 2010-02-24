@@ -326,6 +326,35 @@ table.pager td.sort-by .active:hover { color:#444; }
 .layout-2columns {}
 .layout-3columns {}
 
+.layout-2columns-boutique {padding:0; border:1px solid #000000;}
+.layout-2columns-boutique .col-left {
+	margin:0;overflow-x:hidden; 
+	border-right:1px solid #000; 
+	border-bottom:1px solid #000; 
+	width:219px;
+	}
+.layout-2columns-boutique .col-main {
+	width:736px;overflow-x:hidden
+	}
+.layout-2columns-boutique .category-head {display:none}
+.layout-2columns-boutique .search-bg {
+	height:143px; 	width:740px;
+	margin:0;	
+	background-repeat:no-repeat;
+	background-image:url(../images/banner/femme.jpg);
+	}
+.layout-2columns-boutique .search-bg .search-bar {
+	margin:0;
+	background:none;
+	border:0;
+	height:16px;
+	padding:0 12px;
+	}	
+.toolbar-bottom {
+	height:17px;
+	width:958px;
+}
+
 .page-head-croc h3 {
 clear:both; font-size:23px;clear:both;
 font-family:century gothic;
@@ -398,7 +427,7 @@ h1#logo                 { float:left; }
 .toplinks-bar .top-links a            { padding:0 7px 0 0; background:url(../images/links_separator.gif) no-repeat 100% 50%; }
 .toplinks-bar .top-links .last a      { padding:0; background:none; }
 .search-bar             { padding:3px 12px 2px 12px; border-bottom:1px double #dedede; background:#000;  line-height:1.25em; height:19px; margin-bottom:16px;}
-.breadcrumbs            { float:left; width:580px; overflow:hidden; clear:both; text-transform:uppercase}
+.breadcrumbs            { float:left; width:580px; overflow:hidden; clear:both; text-transform:capitalize}
 .breadcrumbs li         { display:inline; line-height:18px; color:#eee}
 .breadcrumbs a,
 .breadcrumbs a:hover     { color:#fff; }
