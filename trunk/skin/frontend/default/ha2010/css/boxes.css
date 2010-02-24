@@ -280,7 +280,7 @@ td.label        { font-weight:bold; }
 
 /********************** Pager */
 
-table.pager select  { width:50px; margin:0 3px; border:none;border-collapse:collapse; }
+table.pager select  { width:50px; margin:1px 2px; border:none;border-collapse:collapse; }
 table.pager { width:100%; background:url(../images/pager_bg_black.gif) repeat-x 0 100% #000; color:#FFF}
 table.pager td { /*width:33%;border-top:0px solid #ddd;padding:4px 8px;*/ 
 	vertical-align:middle; 
