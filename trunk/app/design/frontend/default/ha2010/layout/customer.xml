@@ -51,6 +51,8 @@ Default layout, loads most of the pages
         <reference name="top.links">
             <action method="addLink" translate="label title" module="customer"><label>My Account</label><url helper="customer/getAccountUrl"/><title>My Account</title><prepare/><urlParams/><position>10</position></action>
         </reference>
+		
+		<!--remove name="wishlist_sidebar"></remove-->
     </default>
 
 <!--
@@ -191,6 +193,8 @@ Customer account home dashboard layout
     <customer_account_index>
         <update handle="customer_account"/>
         <!-- Mage_Customer -->
+		
+		<remove name="wishlist_sidebar"></remove>
 		
         <reference name="root">
             <action method="setTemplate"><template>page/2columns-left-croc.phtml</template></action>

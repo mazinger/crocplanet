@@ -706,6 +706,8 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 
 
 /********************** Layered Navigation */
+.layered-nav .head-static{ padding:4px 17px; font-size:12px;}
+
 .layered-nav .head {
     margin-bottom:6px;
     background:url(../images/layered_nav_head_bg.gif) no-repeat;
@@ -714,10 +716,13 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 .layered-nav h3 { display:none; }
 .layered-nav h4 {
     margin:0;
-    padding:2px 10px;
-    background:#679100;
-    color:#fff;
+    padding:2px 17px;
+    /*background:#679100; color:#fff;*/
+    color:#000;
     font-size:1.1em;
+	border-top:1px solid #000 ;
+	border-bottom:1px solid #000 ;
+	text-transform:capitalize;
     }
 .narrowed-category li {clear:both; }	
 .layered-nav .narrow-by dt { border-top:1px solid #fff; padding:8px 8px 0 8px; font-size:1.1em; }
