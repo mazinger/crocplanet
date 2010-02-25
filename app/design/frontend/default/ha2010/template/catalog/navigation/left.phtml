@@ -32,31 +32,46 @@
  */
 ?>
 <?php if (!Mage::registry('current_category')) return ?>
+<?php $current_category=Mage::registry('current_category') ?>
 <?php $_categories=$this->getCurrentChildCategories() ?>
 <?php $_count = is_array($_categories)?count($_categories):$_categories->count(); ?>
-<?php if(1 || $_count): ?>
-<div class="box layered-nav">
-        <div class="head">
-            <h3><?php echo $this->__('Browse By') ?></h3>
-        </div>
-        <h4><?php echo $this->__('Category') ?></h4>
-        <div class="content">
-        <div class="narrow-by">
-                                <dl id="narrow-by-list">
-                <dd class="no-padding no-border">
-                    <ol>
-                    <?php foreach ($_categories as $_category): ?>
-                        <?php if($_category->getIsActive()): ?>
-                        <li>
-                            <a href="<?php echo $this->getCategoryUrl($_category) ?>"<?php if ($this->isCategoryActive($_category)): ?> class="active"<?php endif ?>><?php echo $this->htmlEscape($_category->getName()) ?></a> (<?php echo $_category->getProductCount() ?>)
-                        </li>
-                        <?php endif; ?>
-                    <?php endforeach ?>
-                    </ol>
-                </dd>
-                                </dl><script type="text/javascript">decorateDataList('narrow-by-list')</script>
-                            </div>
-                        </div>
-                    </div>
-<?php endif; ?>
+<div class="box layered-nav" id="navigation-left">
+	<div class="head-static">
+		<ol>
+		<li><a href="<?php echo $this->getCategoryUrl($current_category) ?>"><?php echo $this->__('Nouveaut&eacute;s') ?></a></li>
+		<li><a href="<?php echo $this->getCategoryUrl($current_category) ?>"><?php echo $this->__('Mailleures ventes') ?></a></li>
+		<li><a href="<?php echo $this->getCategoryUrl($current_category) ?>"><?php echo $this->__('Promotion') ?></a></li>
+		</ol>
+	</div>	
+
+	<?php if($_count): ?>
+	<div class="head no-display">
+		<h3><?php echo $this->__('Browse By') ?></h3>
+	</div>
+	
+	
+	<h4><?php echo $this->__('Category') ?></h4>
+	
+	
+	<div class="content">
+		<div class="narrow-by">
+		<dl id="narrow-by-list">
+			<dd class="no-padding no-border">
+				<ol>
+				<?php foreach ($_categories as $_category): ?>
+					<?php if($_category->getIsActive()): ?>
+					<li>
+						<a href="<?php echo $this->getCategoryUrl($_category) ?>"<?php if ($this->isCategoryActive($_category)): ?> class="active"<?php endif ?>><?php echo $this->htmlEscape($_category->getName()) ?></a> (<?php echo $_category->getProductCount() ?>)
+					</li>
+					<?php endif; ?>
+				<?php endforeach ?>
+				</ol>
+			</dd>
+							</dl><script type="text/javascript">decorateDataList('narrow-by-list')</script>
+						</div>
+	</div>
+	
+	<?php endif; ?>
+</div>
+
 <!-- [ends] .browse-by // -->
