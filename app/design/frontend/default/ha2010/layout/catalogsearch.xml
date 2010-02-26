@@ -33,8 +33,8 @@
             <block type="core/template" name="top.search" as="topSearch" template="catalogsearch/form.mini.phtml"/>
         </reference>
         <reference name="footer_links">
-            <action method="addLink" translate="label title" module="catalogsearch" ifconfig="catalog/seo/search_terms"><label>Search Terms</label><url helper="catalogsearch/getSearchTermUrl" /><title>Search Terms</title></action>
-            <action method="addLink" translate="label title" module="catalogsearch"><label>Advanced Search</label><url helper="catalogsearch/getAdvancedSearchUrl" /><title>Advanced Search</title></action>
+            <!--action method="addLink" translate="label title" module="catalogsearch" ifconfig="catalog/seo/search_terms"><label>Search Terms</label><url helper="catalogsearch/getSearchTermUrl" /><title>Search Terms</title></action>
+            <action method="addLink" translate="label title" module="catalogsearch"><label>Advanced Search</label><url helper="catalogsearch/getAdvancedSearchUrl" /><title>Advanced Search</title></action-->
         </reference>
     </default>
 
