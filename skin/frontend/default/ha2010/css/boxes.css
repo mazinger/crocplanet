@@ -478,11 +478,12 @@ h1#logo                 { float:left; }
 
 
 /* Base Mini */
-.base-mini { border:1px solid #ddd; line-height:1.3em; }
-.base-mini .head { border-bottom:1px solid #ddd; background-color:#e7e7e7; padding:2px 10px; }
+.base-mini { border:0px solid #ddd; line-height:1.3em; }
+.base-mini .head { border-bottom:1px solid #000; background-color:#000; padding:2px 17px; color:#fff;}
 .base-mini .head a { font-size:10px; text-transform:uppercase; }
-.base-mini .head h4 { margin:0; font-size:1.1em; color:#444; text-transform:uppercase; }
-.base-mini .head h4 .count { text-transform:none; color:#2f2f2f; white-space:nowrap; font-weight:normal; font-size:.95em; }
+.base-mini .head h4 { margin:0; font-size:1.1em; color:#fff; text-transform:capitalize; font-weight:normal}
+.base-mini .head h4 .count { text-transform:none; color:#fff; white-space:nowrap; font-weight:normal; font-size:.95em; }
+.base-mini .head h4 a {color:#fff}
 .base-mini h5 { margin:0; font-size:10px; font-weight:normal; text-align:left; text-transform:uppercase; }
 .base-mini .product-images      { float:left; width:52px; height:52px; }
 .base-mini .product-images a img { border:1px solid #a9a9a9; vertical-align:top; }
@@ -509,10 +510,10 @@ h1#logo                 { float:left; }
 .mini-newsletter .input-box         { float:left; width:186px; margin-right:5px; }
 .mini-newsletter .input-text        { width:180px; }
 
-.mini-cart .head                    { background:#679100; }
+.mini-cart .head                    { background:#000; }
 .mini-cart .head h4                 { color:#fff; }
 .mini-cart h5                       { margin-bottom:10px; border-bottom:1px solid #ddd; padding-bottom:3px; }
-.mini-cart .cart-count              { background:#e5eed6; padding:8px; text-align:center; }
+.mini-cart .cart-count              { background:#fff; padding:8px; text-align:center; border-bottom:1px solid }
 .mini-cart .subtotal                { background:url(../images/cart_subtotal_count.gif) no-repeat 50% 0; margin-top:5px; line-height:23px; }
 
 .mini-poll td.label                 { font-weight:bold; padding-right:10px; }
