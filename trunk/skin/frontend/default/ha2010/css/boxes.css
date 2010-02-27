@@ -414,11 +414,11 @@ a.croc-button2 , a.croc-button2:hover {color:#FFFFFF; }
 h1#logo                 { float:left; }
 .side-logo-promo        { float:right; /*margin:15px 0px 0 10px; */}
 .page-popup h1#logo     { display:none; }
-.language-switcher      { float:left; }
+.language-switcher      { float:right; }
 .language-switcher label{ color:#fff; }
 .language-switcher .flag option { background-repeat:no-repeat; background-position:left center; padding-left:20px;margin-left:2px; }
-.toplinks-bar           { background:#fff; color:#000; padding-bottom:2px; text-align:right; }
-.toplinks-bar .top-links              { padding-left:8px; }
+.toplinks-bar           { background:#fff; color:#000; padding-bottom:2px; text-align:right;height:18px; }
+.toplinks-bar .top-links              { padding-left:8px; float:right}
 .toplinks-bar .top-links,
 .toplinks-bar .top-links li           { display:inline; text-transform:capitalize;}
 .toplinks-bar .top-links li           { padding:0 4px 0 1px; }
@@ -442,7 +442,15 @@ h1#logo                 { float:left; }
     /*background:url(../images/head_search.gif) no-repeat 0 50%;*/
     padding-left:45px;
     }
-.mini-search .input-text { width:212px; margin-right:2px; }
+.mini-search .input-text { 
+	border:1px solid #000000;
+	color:#C4C4C4;
+	font-size:10px;
+	height:13px;
+	padding:4px;
+	width:212px;
+	
+}
 
 .search-autocomplete { position:absolute; /*left:45px !important; top:22px !important; width:216px!important;*/ }
 .search-autocomplete ul { border:1px solid #999; background:#f9f5f0; }
@@ -506,9 +514,9 @@ h1#logo                 { float:left; }
 .mini-product-tags .content a:hover { color:#1b2d3b; }
 
 .mini-newsletter                    { margin:8px 0; }
-.mini-newsletter label              { float:left; }
+.mini-newsletter label              { float:left;float:left;font-size:12px;font-weight:normal;margin-bottom:6px; }
 .mini-newsletter .input-box         { float:left; width:186px; margin-right:5px; }
-.mini-newsletter .input-text        { width:180px; }
+.mini-newsletter .input-text        { width:180px;font-size:10px;padding:2px; border:1px solid #000;color:#C4C4C4;height:13px; }
 
 .mini-cart .head                    { background:#000; }
 .mini-cart .head h4                 { color:#fff; }
@@ -531,15 +539,15 @@ h1#logo                 { float:left; }
 
 
 /********************** Footer */
-.footer                         { margin:15px 0 40px 0; color:#666; }
+.footer                         { margin:15px 0 40px 0; color:#666; font-size:12px;line-height:12px;}
 .footer .footer-right           { float:right; width:50%; text-align:right; }
 .footer .footer-callout         { margin-top:-10px; }
 .footer .footer-links           { margin-bottom:10px; }
 .footer .footer-links li.last a { padding-right:0; margin-right:0; background:none; }
-.footer ul a                    { /*background:url(../images/links_separator.gif) no-repeat 100% 50%;*/ padding-right:5px; margin-right:3px; }
+.footer ul a                    { /*background:url(../images/links_separator.gif) no-repeat 100% 50%;*/ /*padding-right:5px; margin-right:3px;*/ color:#000}
 .footer ul,
 .footer li                      { display:inline; font-weight:bold; }
-.footer li  					{ border-right:1px solid; padding:0 25px;}
+.footer li  					{ /*border-right:1px solid #fff;*/ padding:0 21px;}
 .footer li.last					{ border-right:0px solid;}
 .footer a,
 .footer a:hover                 { color:#444; }
