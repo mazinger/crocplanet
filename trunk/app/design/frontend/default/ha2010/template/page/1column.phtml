@@ -54,12 +54,15 @@
     <div class="container">
         <?php echo $this->getChildHtml('header') ?>
         <div class="outline-creator">
-            <div class="toplinks-bar">
-            	<?php echo $this->getChildHtml('topMenu') ?>
-                <?php echo $this->getChildHtml('store_language') ?>
-                <?php echo $this->getChildHtml('topLinks') ?>
-             </div>
-            <div class="search-bar1">
+            <div class="toplinks-bar" style="">
+            	<div class="f-left"><?php echo $this->getChildHtml('topMenu') ?></div>
+                
+                <div class="f-right">
+                	<?php echo $this->getChildHtml('store_language') ?>
+                    <?php echo $this->getChildHtml('topLinks') ?>                     
+                </div>
+            </div>
+            <div class="search-bar1" style="">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
             </div>
             <div class="middle layout-1column" id="main">

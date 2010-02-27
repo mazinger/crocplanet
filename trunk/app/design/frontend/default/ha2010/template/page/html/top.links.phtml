@@ -31,5 +31,7 @@
     <?php foreach($toplinks as $_toplink): ?>
     <li<?php if($_toplink['first']||$_toplink['last']): ?> class="<?php if($_toplink['first']): ?>first <?php endif; ?><?php if($_toplink['last']): ?>last <?php endif; ?>"<?php endif; ?> <?php echo $_toplink['liParams'] ?>>        <?php echo $_toplink['beforeText'] ?><a <?php echo $_toplink['aParams'] ?>><?php echo $_toplink['innerText'] ?></a><?php echo $_toplink['afterText'] ?></li>
     <?php endforeach; ?>
+    <li>€</li>
+    <li>FR</li>
 </ul>
 <?php endif; ?>
