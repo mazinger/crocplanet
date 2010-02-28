@@ -190,6 +190,8 @@ p.required { text-align:right; }
     float:left;
     width:60%;
     }
+.facebook h3 {padding-left:0px;}
+.facebook h3 {color:#0033FF}
 
 .head-alt           { margin-bottom:5px; }
 .head-alt .title    { color:#4f8100; font-size:1.3em; }

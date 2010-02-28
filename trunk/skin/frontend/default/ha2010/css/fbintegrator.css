@@ -1,11 +1,21 @@
-.fbintegrator-login-box .content {
-    min-height: 236px;
-}
-
-.fbintegrator-login-box h4, .fbintegrator-login-box .new-users h4, .fbintegrator-login-box .registered-users h4 {
-    background-image: url(../images/fbintegrator/Connect_light_small_short.gif);
-    background-position:0 1px;
-    background-repeat:no-repeat;
-    min-height:20px;
-    padding-left:23px;
+.fbintegrator-login-box .content {
+
+    min-height: 175px;
+
+}
+
+
+
+.fbintegrator-login-box h4, .fbintegrator-login-box .new-users h4, .fbintegrator-login-box .registered-users h4 {
+
+    /*background-image: url(../images/fbintegrator/Connect_light_small_short.gif);*/
+
+    background-position:0 1px;
+
+    background-repeat:no-repeat;
+
+    min-height:20px;
+
+    /*padding-left:23px;*/
+
 }
