@@ -1,0 +1,25 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_FBIntegrator
+ * @copyright  Copyright (c) 2003-2009 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<script type="text/javascript">
+var Facebook = new FBIntegrator('<?php echo $this->getApiKey() ?>', '<?php echo $this->getXdUrl() ?>', '<?php echo $this->getAjaxUrl() ?>');
+document.observe('dom:loaded', function () {
+<?php $nonGrantedPermissions = $this->getNonGrantedPermissions(); if (count($nonGrantedPermissions)): ?>
+	FB.Connect.ifUserConnected(function(){FB.Connect.showPermissionDialog('<?php echo implode(',', $nonGrantedPermissions) ?>', function(permissions){Facebook.savePermissions(permissions);});});
+<?php endif; ?>
+});
+</script>

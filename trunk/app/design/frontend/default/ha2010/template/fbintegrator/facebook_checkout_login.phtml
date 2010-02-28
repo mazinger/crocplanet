@@ -1,0 +1,93 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_FBIntegrator
+ * @copyright  Copyright (c) 2003-2009 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<br />
+<h2><?php echo $this->__('Facebook user? Use a form below') ?></h2>
+<div class="col2-set">
+    <div class="col-1">
+        <h4><?php echo $this->__('Fast sign up with Facebook') ?></h4>
+        <form id="fbintegrator-form">
+            <ul class="form-list">
+                <li>
+                    <label for="username"><?php echo $this->__('Email Address') ?> <span class="required">*</span></label><br />
+                    <input name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" title="<?php echo $this->__('Email Address') ?>" id="username" type="text" class="input-text validate-email required-entry" style="width:250px;" />
+                </li>
+                <li>
+                    <label for="password"><?php echo $this->__('Password') ?> <span class="required">*</span></label><br />
+                    <input name="login[password]" type="password" class="input-text required-entry validate-password" id="password" style="width:250px;" />
+                </li>
+                <li>
+                    <label for="confirmation"><?php echo $this->__('Confirm Password') ?> <span class="required">*</span></label><br />
+                    <input name="login[confirmation]" type="password" class="input-text required-entry validate-cpassword" id="confirmation" style="width:250px;" />
+                </li>
+                <?php if ($this->isNewsletterEnabled()): ?>
+                <li>
+                    <input type="checkbox" name="is_subscribed" title="<?php echo $this->__('Sign Up for Newsletter') ?>" value="1" id="is_subscribed" />
+                    <label for="is_subscribed"><?php echo $this->__('Sign Up for Newsletter') ?></label>
+                </li>
+                <?php endif ?>
+            </ul>
+       </form>
+    </div>
+    <div class="col-2">
+        <h4><?php echo $this->__('Fast login with Facebook') ?></h4>
+            <p><strong><?php echo $this->__('Have an account here and on Facebook? Click the button below to login.') ?></strong><br />
+    </div>
+</div>
+<div class="col2-set">
+    <div class="col-1">
+        <div class="button-set">
+            <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+            <a href="#" onclick="fbiRegister(); return false;" class="right"> <img id="fb_login_image" src="<?php echo $this->getSkinUrl('images/fbintegrator/Connect_white_medium_long.gif') ?>" alt="<?php echo $this->__('Register') ?>" /> </a>
+            <span id="fbintegrator-register-loading" style="display:none;">
+                <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" class="v-middle" alt="" /> &nbsp; <?php echo $this->__('Loading...') ?> &nbsp;
+            </span>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="button-set">
+            <p class="required">&nbsp;</p>
+            <a href="#" onclick="fbiLogin(); return false;" class="right"> <img id="fb_login_image" src="<?php echo $this->getSkinUrl('images/fbintegrator/Connect_white_medium_long.gif') ?>" alt="<?php echo $this->__('Login') ?>" /> </a>
+            <span id="fbintegrator-login-loading" style="display:none;">
+                <img src="<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif') ?>" class="v-middle" alt="" /> &nbsp; <?php echo $this->__('Loading...') ?> &nbsp;
+            </span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+fbiDomLoaded = false;
+var Facebook = new FBIntegrator('<?php echo $this->getApiKey() ?>', '<?php echo $this->getXdUrl() ?>', '<?php echo $this->getAjaxUrl() ?>');
+document.observe('dom:loaded', function () {fbiDomLoaded = true});
+fbiRegister = function(){
+    if (!fbiDomLoaded) return false;
+    if ('undefined' != typeof(Facebook)){
+        if (Facebook.validateForm($('fbintegrator-form'))){
+            Facebook.ajaxLoader = $('fbintegrator-register-loading');
+            Facebook.ajaxLoader.show();
+            FB.Connect.requireSession(function() { Facebook.register($('fbintegrator-form')); });
+        }
+    }
+};
+fbiLogin = function(){
+    if (!fbiDomLoaded) return false;
+    if ('undefined' != typeof(Facebook)){
+        Facebook.ajaxLoader = $('fbintegrator-login-loading');
+        Facebook.ajaxLoader.show();
+        FB.Connect.requireSession(function() { Facebook.login(); });
+    }
+};
+</script>

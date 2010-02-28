@@ -32,9 +32,8 @@
                 $this->helper('wishlist')->getListUrl(),
                 $this->helper('wishlist')->getItemCount()
             ) ?></h4>
-            <div class="clear"></div>
-        <h5><?php echo $this->__('Last Added Items') ?></h5>
     </div>
+     <div class="head2"><h5><?php echo $this->__('Last Added Items') ?></h5></div>
     <?php if($this->helper('wishlist')->getItemCount()>0): ?>
     <div class="content"><ol id="wishlist-sidebar">
      <?php foreach($this->getWishlistItems() as $_item): ?>

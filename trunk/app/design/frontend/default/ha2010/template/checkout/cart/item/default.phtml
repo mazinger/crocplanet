@@ -26,6 +26,12 @@
 ?>
 <?php $_item = $this->getItem()?>
 <tr>
+	<td class="a-center">
+        <a href="<?php echo $this->getDeleteUrl() ?>">
+            <img src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/bt_suppr_off.gif') ?>"  alt="<?php $this->__('Remove item')?>" />
+        </a>
+    </td>
+    
     <td class="a-center">
         <a href="<?php echo $this->getProductUrl() ?>">
             <img src="<?php echo $this->getProductThumbnail()->resize(75); ?>" alt="<?php echo $this->htmlEscape($this->getProductName()) ?>" width="75" />
@@ -63,11 +69,40 @@
         <?php endforeach; ?>
         <?php endif; ?>
     </td>
-    <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+    <?php if (0 &&  $this->helper('wishlist')->isAllowInCart()) : ?>
     <td class="a-center">
         <input type="checkbox" value="1" name="cart[<?php echo $_item->getId() ?>][wishlist]" />
     </td>
     <?php endif ?>
+    
+    <?php $id_qty = "cart_". $_item->getId(). "_qty"?>
+    
+<script type="text/javascript">
+	function downQty(id, min){
+		e = $(id); if(!e) return ;
+		v = parseInt(e.value) ;
+		if (v> min) e.value = v-1 ;
+		else  e.value = min ;
+	}
+	function upQty(id, max){
+		e = $(id); if(!e) return ;
+		v = parseInt(e.value) ;
+		if (v< max) e.value = v+1 ;
+		else  e.value = max ;
+	}
+</script>
+
+     <td class="a-center">
+     	<a href="#" onclick="downQty('<?php echo $id_qty ?>',1);">
+            <img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/ico_moins.gif') ?>"  alt="<?php $this->__('-')?>" />
+        </a>
+        <input name="cart[<?php echo $_item->getId() ?>][qty]" 
+        	id ="<?php echo $id_qty ?>"
+        	value="<?php echo $this->getQty() ?>" size="4" class="input-text qty" maxlength="8" />
+        <a href="#" onclick="upQty('<?php echo $id_qty ?>',99);">
+            <img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/ico_plus.gif') ?>"  alt="<?php $this->__('+')?>" />
+        </a>
+    </td>
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-right">
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
@@ -161,9 +196,7 @@
         <?php endif; ?>
     </td>
     <?php endif; ?>
-    <td class="a-center">
-        <input name="cart[<?php echo $_item->getId() ?>][qty]" value="<?php echo $this->getQty() ?>" size="4" class="input-text qty" maxlength="8" />
-    </td>
+    
     <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
     <td class="a-right">
         <?php if (Mage::helper('weee')->typeOfDisplay($_item, array(1, 4), 'sales') && $_item->getWeeeTaxAppliedAmount()): ?>
@@ -257,9 +290,5 @@
         <?php endif; ?>
     </td>
     <?php endif; ?>
-    <td class="a-center">
-        <a href="<?php echo $this->getDeleteUrl() ?>">
-            <img src="<?php echo $this->getSkinUrl('images/btn_trash.gif') ?>" width="16" height="16" alt="<?php $this->__('Remove item')?>" />
-        </a>
-    </td>
+    
 </tr>

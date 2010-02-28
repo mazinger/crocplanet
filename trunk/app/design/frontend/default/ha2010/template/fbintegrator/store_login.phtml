@@ -1,0 +1,51 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_FBIntegrator
+ * @copyright  Copyright (c) 2003-2009 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="fbi-login-form">
+<div class="col-1 login-box">
+<div class="col-1 registered-users">
+        <div class="content">
+            <h4 style="padding-left: 20px;"><?php echo $this->__('Registered Customers') ?></h4>
+			<?php if ($this->hasError()): ?>
+			<ul class="messages"><li class="error-msg"><ul><li><?= $this->getError() ?></li></ul></li></ul>
+			<?php endif; ?>
+            <p><?php echo $this->__('You have to submit this form only once - we need to establish linking between your Facebook account and you account on our store. Future logins will be quick!') ?></p>
+            <ul class="form-list">
+                    <li>
+                        <label for="email"><?php echo $this->__('Email Address') ?> <span class="required">*</span></label><br />
+                        <input name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" title="<?php echo $this->__('Email Address') ?>" id="aw_email" type="text" class="input-text required-entry" style="width:250px;" />
+                    </li>
+                    <li>
+                        <label for="pass"><?php echo $this->__('Password') ?> <span class="required">*</span></label><br />
+                        <input name="login[password]" type="password" class="input-text required-entry validate-password" id="pass" style="width:250px;" />
+                    </li>
+                </ul>
+                <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+		</div>
+    <div class="button-set">
+        <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="left"><?php echo $this->__('Forgot Your Password?') ?></a>
+    	<span id="login-please-wait" style="display:none;" class="fbintegrator-please-wait">
+            <img src="<?php echo $this->getSkinUrl('images/fbintegrator/ajax-loader.gif') ?>" class="v-middle" alt="" /> &nbsp; <?php echo $this->__('Login...') ?> &nbsp;
+        </span>
+		<button class="form-button" id="fbintegrator-cancel" type="button" onclick="return false;"><span id="fbintegrator-cancel"><?= $this->__('Cancel') ?></span></button>
+        <button class="form-button" type="submit"><span><?php echo $this->__('Login') ?></span></button>
+    </div>
+</div>
+</div>
+<script type="text/javascript">
+    var fbintegratorForm = new FBIntegratorForm('fbi-login-form');
+</script>

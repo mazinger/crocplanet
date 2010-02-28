@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @copyright  Copyright (c) 2009 AITOC, Inc. -->
+
+<layout>
+	<default>
+		<reference name="head">
+        	<action method="addJs"><script>fbintegrator/fbintegrator.js</script></action>
+        	<action method="addCss"><script>css/fbintegrator.css</script></action>
+        </reference>
+		<reference name="content">
+			<block type="fbintegrator/init" template="fbintegrator/facebook_init.phtml" name="facebook_init" before="-" />
+		</reference>
+	</default>
+
+    <customer_account_login>
+    	<reference name="content">
+    		<block type="fbintegrator/facebook" template="fbintegrator/facebook_login.phtml" name="facebook_login" after="customer_form_login" />
+    	</reference>
+    </customer_account_login>
+
+    <!--<customer_account_logoutsuccess>
+    	<reference name="content">
+    		<block type="fbintegrator/facebook" template="fbintegrator/facebook_logout.phtml" name="facebook_logout" after="facebook_init" />
+    	</reference>
+    </customer_account_logoutsuccess>-->
+    
+    <customer_account_index>
+    	<reference name="content">
+    		<block type="fbintegrator/facebook" template="fbintegrator/facebook_permissions.phtml" name="facebook_permissions" after="facebook_init" />
+    	</reference>
+    </customer_account_index>
+    
+    <checkout_onepage_index>
+        <reference name="content">
+            <block type="fbintegrator/facebook" template="fbintegrator/facebook_permissions.phtml" name="facebook_permissions" after="facebook_init" />
+        </reference>
+        <reference name="checkout.onepage.login">
+            <action method="setTemplate"><template>fbintegrator/checkout-onepage-login.phtml</template></action>
+        </reference>
+    </checkout_onepage_index>
+
+</layout>
