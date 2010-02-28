@@ -1,0 +1,522 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento Owebia Shipping Module
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Owebia
+ * @package    Owebia_Shipping
+ * @copyright  Copyright (c) 2008-09 Owebia (http://www.owebia.com/)
+ * @author     Antoine Lemoine
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Owebia_Shipping_2>
+			<version>2.1.6</version>
+			<depends>
+				<Mage_Shipping />
+			</depends>
+		</Owebia_Shipping_2>
+	</modules>
+	
+	<global>
+		<models>
+			<Owebia_Shipping_2>
+				<class>Owebia_Shipping_2</class>
+			</Owebia_Shipping_2>
+ 		</models>
+
+		<resources>
+			<sales>
+				<shipping>
+					<carriers>
+						<owebiashipping1>
+							<class>Owebia_Shipping_2_Model_Carrier_OwebiaShipping1</class>
+						</owebiashipping1>
+						<owebiashipping2>
+							<class>Owebia_Shipping_2_Model_Carrier_OwebiaShipping2</class>
+						</owebiashipping2>
+						<owebiashipping3>
+							<class>Owebia_Shipping_2_Model_Carrier_OwebiaShipping3</class>
+						</owebiashipping3>
+					</carriers>
+				</shipping>
+			</sales>
+		</resources>
+	</global>
+
+	<adminhtml>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<owebia>
+											<title>Owebia Section</title>
+											<sort_order>100</sort_order>
+										</owebia>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<translate>
+			<modules>
+				<Mage_Shipping>
+					<files>
+						<Owebia_Shipping_2>Owebia_Shipping_2.csv</Owebia_Shipping_2>
+					</files>
+				</Mage_Shipping>
+			</modules>
+		</translate>
+	</adminhtml>
+
+	<frontend>
+		<translate>
+			<modules>
+				<Mage_Shipping>
+					<files>
+						<Owebia_Shipping_2>Owebia_Shipping_2.csv</Owebia_Shipping_2>
+					</files>
+				</Mage_Shipping>
+			</modules>
+		</translate>
+	</frontend>
+
+	<default>
+		<owebia>
+			<shipping>
+				<display_when_unavailable>0</display_when_unavailable>
+				<weight_unit>kg</weight_unit>
+			</shipping>
+		</owebia>
+		<carriers>
+			<owebiashipping1>
+				<active>0</active>
+				<title>Colissimo / Chronopost / Export 3J</title>
+				<model>Owebia_Shipping_2_Model_Carrier_OwebiaShipping1</model>
+				<tracking_view_url></tracking_view_url>
+				<config>
+# Colissimo National (France, Andorre, Monaco)
+{
+	label: "Colissimo National",
+	code: "colissimo",
+	tracking_url: "http://www.coliposte.net/particulier/suivi_particulier.jsp?colispart={tracking_number}",
+	destination: "AD,FR,MC",
+	fees: "{table 'weight' 0.5:5.30, 1.0:6.50, 2.0:7.40, 3.0:8.30, 5.0:10.10, 7.0:11.90, 10.0:14.60, 15.0:16.60, 30.0:22.60}",
+}
+# Colissimo National + Recommandé R1
+{
+	label: "Colissimo National Recommandé R1",
+	code: "colissimo_r1",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "{price_excluding_tax}&lt;=50.00",
+	fees: "{table 'weight' 0.5:7.60, 1.0:8.50, 2.0:9.70, 3.0:10.60, 5.0:12.40, 7.0:14.20, 10.0:16.90, 15.0:18.90, 30.0:24.90}",
+}
+# Colissimo National + Recommandé R2
+{
+	label: "Colissimo National Recommandé R2",
+	code: "colissimo_r2",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "({price_excluding_tax}&gt;50.00)and({price_excluding_tax}&lt;=200.00)",
+	fees: "{table 'weight' 0.5:8.50, 1.0:9.70, 2.0:10.60, 3.0:11.50, 5.0:13.30, 7.0:15.10, 10.0:17.80, 15.0:19.80, 30.0:25.80}",
+}
+# Colissimo National + Recommandé R3
+{
+	label: "Colissimo National Recommandé R3",
+	code: "colissimo_r3",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "({price_excluding_tax}&gt;200.00)and({price_excluding_tax}&lt;=400.00)",
+	fees: "{table 'weight' 0.5:9.70, 1.0:10.90, 2.0:11.80, 3.0:12.70, 5.0:14.50, 7.0:16.30, 10.0:19.00, 15.0:21.00, 30.0:27.00}",
+}
+# Colissimo National + Recommandé R4
+{
+	label: "Colissimo National Recommandé R4",
+	code: "colissimo_r4",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "({price_excluding_tax}&gt;400.00)and({price_excluding_tax}&lt;=600.00)",
+	fees: "{table 'weight' 0.5:10.90, 1.0:12.10, 2.0:13.00, 3.0:13.90, 5.0:15.70, 7.0:17.50, 10.0:20.20, 15.0:22.20, 30.0:28.20}",
+}
+# Colissimo National + Recommandé R5
+{
+	label: "Colissimo National Recommandé R5",
+	code: "colissimo_r5",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "{price_excluding_tax}&gt;600.00",
+	fees: "1.30+{table 'weight' 0.5:12.10, 1.0:13.30, 2.0:14.20, 3.0:15.10, 5.0:16.90, 7.0:18.70, 10.0:21.40, 15.0:23.40, 30.0:29.40}",
+}
+
+# Colissimo National + Accusé réception
+{
+	enabled: false,
+	label: "Colissimo National",
+	code: "colissimo_ar",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	fees: "1.30+{table 'weight' 0.5:5.30, 1.0:6.50, 2.0:7.40, 3.0:8.30, 5.0:10.10, 7.0:11.90, 10.0:14.60, 15.0:16.60, 30.0:22.60}",
+}
+# Colissimo National + Recommandé R1 + Accusé réception
+{
+	enabled: false,
+	label: "Colissimo National Recommandé R1",
+	code: "colissimo_ar_r1",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "{price_excluding_tax}&lt;=50.00",
+	fees: "1.30+{table 'weight' 0.5:7.60, 1.0:8.50, 2.0:9.70, 3.0:10.60, 5.0:12.40, 7.0:14.20, 10.0:16.90, 15.0:18.90, 30.0:24.90}",
+}
+# Colissimo National + Recommandé R2 + Accusé réception
+{
+	enabled: false,
+	label: "Colissimo National Recommandé R2",
+	code: "colissimo_ar_r2",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "({price_excluding_tax}&gt;50.00)and({price_excluding_tax}&lt;=200.00)",
+	fees: "1.30+{table 'weight' 0.5:8.50, 1.0:9.70, 2.0:10.60, 3.0:11.50, 5.0:13.30, 7.0:15.10, 10.0:17.80, 15.0:19.80, 30.0:25.80}",
+}
+# Colissimo National + Recommandé R3 + Accusé réception
+{
+	enabled: false,
+	label: "Colissimo National Recommandé R3",
+	code: "colissimo_ar_r3",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "({price_excluding_tax}&gt;200.00)and({price_excluding_tax}&lt;=400.00)",
+	fees: "1.30+{table 'weight' 0.5:9.70, 1.0:10.90, 2.0:11.80, 3.0:12.70, 5.0:14.50, 7.0:16.30, 10.0:19.00, 15.0:21.00, 30.0:27.00}",
+}
+# Colissimo National + Recommandé R4 + Accusé réception
+{
+	enabled: false,
+	label: "Colissimo National Recommandé R4",
+	code: "colissimo_ar_r4",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "({price_excluding_tax}&gt;400.00)and({price_excluding_tax}&lt;=600.00)",
+	fees: "1.30+{table 'weight' 0.5:10.90, 1.0:12.10, 2.0:13.00, 3.0:13.90, 5.0:15.70, 7.0:17.50, 10.0:20.20, 15.0:22.20, 30.0:28.20}",
+}
+# Colissimo National + Recommandé R5 + Accusé réception
+{
+	enabled: false,
+	label: "Colissimo National Recommandé R5",
+	code: "colissimo_ar_r5",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AD,FR,MC",
+	conditions: "{price_excluding_tax}&gt;600.00",
+	fees: "1.30+{table 'weight' 0.5:12.10, 1.0:13.30, 2.0:14.20, 3.0:15.10, 5.0:16.90, 7.0:18.70, 10.0:21.40, 15.0:23.40, 30.0:29.40}",
+}
+
+# Colissimo International OM1 (Outre-mer et Collectivités)
+{
+	label: "Colissimo DOM Assuré",
+	code: "colissimo_dom",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "GF,GP,MF,MQ,PM,RE,YT",
+	fees: "{table 'weight' 0.5:8.10, 1.0:12.20, 2.0:16.65, 3.0:21.10, 4.0:25.55, 5.0:30.00, 6.0:34.45, 7.0:38.90, 8.0:43.35, 9.0:47.80, 10.0:52.25, 15.0:74.75, 20.0:97.25, 25.0:119.75, 30.0:30.70}",
+}
+# Colissimo International OM1 + Recommandé R1
+{
+	label: "Colissimo DOM Recommandé R1",
+	code: "colissimo_dom_r1",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "GF,GP,MF,MQ,PM,RE,YT",
+	conditions: "{price_excluding_tax}&lt;=50.00",
+	fees: "{table 'weight' 0.5:10.40, 1.0:14.50, 2.0:18.95, 3.0:23.40, 4.0:27.85, 5.0:32.30, 6.0:36.75, 7.0:41.20, 8.0:45.65, 9.0:50.10, 10.0:54.55, 15.0:77.05, 20.0:99.55, 25.0:122.05, 30.0:144.55}",
+}
+# Colissimo International OM1 + Recommandé R2
+{
+	label: "Colissimo DOM Recommandé R2",
+	code: "colissimo_dom_r2",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "GF,GP,MF,MQ,PM,RE,YT",
+	conditions: "({price_excluding_tax}&gt;50.00)and({price_excluding_tax}&lt;=200.00)",
+	fees: "{table 'weight' 0.5:11.30, 1.0:15.40, 2.0:19.85, 3.0:24.30, 4.0:28.75, 5.0:33.20, 6.0:37.65, 7.0:42.10, 8.0:46.55, 9.0:51.00, 10.0:55.45, 15.0:77.95, 20.0:100.45, 25.0:122.95, 30.0:145.45}",
+}
+# Colissimo International OM1 + Recommandé R3
+{
+	label: "Colissimo DOM Recommandé R3",
+	code: "colissimo_dom_r3",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "GF,GP,MF,MQ,PM,RE,YT",
+	conditions: "({price_excluding_tax}&gt;200.00)and({price_excluding_tax}&lt;=400.00)",
+	fees: "{table 'weight' 0.5:12.50, 1.0:16.60, 2.0:21.05, 3.0:25.50, 4.0:29.95, 5.0:34.40, 6.0:38.85, 7.0:43.30, 8.0:47.75, 9.0:52.20, 10.0:56.65, 15.0:79.15, 20.0:101.65, 25.0:124.15, 30.0:146.65}",
+}
+# Colissimo International OM1 + Recommandé R4
+{
+	label: "Colissimo DOM Recommandé R4",
+	code: "colissimo_dom_r4",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "GF,GP,MF,MQ,PM,RE,YT",
+	conditions: "({price_excluding_tax}&gt;400.00)and({price_excluding_tax}&lt;=600.00)",
+	fees: "{table 'weight' 0.5:13.70, 1.0:17.80, 2.0:22.25, 3.0:26.70, 4.0:31.15, 5.0:35.60, 6.0:40.05, 7.0:44.50, 8.0:48.95, 9.0:53.40, 10.0:57.85, 15.0:80.35, 20.0:102.85, 25.0:126.55, 30.0:147.85}",
+}
+# Colissimo International OM1 + Recommandé R5
+{
+	label: "Colissimo DOM Recommandé R5",
+	code: "colissimo_dom_r5",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "GF,GP,MF,MQ,PM,RE,YT",
+	conditions: "{price_excluding_tax}&gt;600.00",
+	fees: "{table 'weight' 0.5:14.90, 1.0:19.00, 2.0:23.45, 3.0:27.90, 4.0:32.35, 5.0:36.80, 6.0:41.25, 7.0:45.70, 8.0:50.15, 9.0:54.60, 10.0:59.05, 15.0:81.55, 20.0:104.05, 25.0:119.10, 30.0:149.05}",
+}
+
+# Colissimo International OM2 (Outre-mer et Collectivités)
+{
+	label: "Colissimo TOM Assuré",
+	code: "colissimo_tom",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AQ,NC,PF,TF,WF",
+	fees: "{table 'weight' 0.5:10.00, 1.0:15.00, 2.0:26.50, 3.0:38.00, 4.0:49.50, 5.0:61.00, 6.0:72.50, 7.0:86.30, 8.0:95.50, 9.0:107.00, 10.0:118.50, 15.0:176.50, 20.0:234.50, 25.0:292.50, 30.0:350.50}",
+}
+# Colissimo International OM2 + Recommandé R1
+{
+	label: "Colissimo TOM Recommandé R1",
+	code: "colissimo_tom_r1",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AQ,NC,PF,TF,WF",
+	conditions: "{price_excluding_tax}&lt;=50.00",
+	fees: "{table 'weight' 0.5:12.30, 1.0:17.30, 2.0:28.80, 3.0:40.30, 4.0:51.80, 5.0:63.30, 6.0:74.80, 7.0:87.20, 8.0:97.80, 9.0:109.30, 10.0:120.80, 15.0:178.80, 20.0:236.80, 25.0:294.80, 30.0:352.80}",
+}
+# Colissimo International OM2 + Recommandé R2
+{
+	label: "Colissimo TOM Recommandé R2",
+	code: "colissimo_tom_r2",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AQ,NC,PF,TF,WF",
+	conditions: "({price_excluding_tax}&gt;50.00)and({price_excluding_tax}&lt;=200.00)",
+	fees: "{table 'weight' 0.5:13.20, 1.0:18.20, 2.0:29.70, 3.0:41.20, 4.0:52.70, 5.0:64.20, 6.0:75.70, 7.0:88.40, 8.0:98.70, 9.0:110.20, 10.0:121.79, 15.0:179.70, 20.0:237.70, 25.0:295.70, 30.0:353.70}",
+}
+# Colissimo International OM2 + Recommandé R3
+{
+	label: "Colissimo TOM Recommandé R3",
+	code: "colissimo_tom_r3",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AQ,NC,PF,TF,WF",
+	conditions: "({price_excluding_tax}&gt;200.00)and({price_excluding_tax}&lt;=400.00)",
+	fees: "{table 'weight' 0.5:14.40, 1.0:19.40, 2.0:30.90, 3.0:42.40, 4.0:53.90, 5.0:65.40, 6.0:76.90, 7.0:89.60, 8.0:99.90, 9.0:111.40, 10.0:122.90, 15.0:180.90, 20.0:238.90, 25.0:296.90, 30.0:354.90}",
+}
+# Colissimo International OM2 + Recommandé R4
+{
+	label: "Colissimo TOM Recommandé R4",
+	code: "colissimo_tom_r4",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AQ,NC,PF,TF,WF",
+	conditions: "({price_excluding_tax}&gt;400.00)and({price_excluding_tax}&lt;=600.00)",
+	fees: "{table 'weight' 0.5:15.60, 1.0:20.60, 2.0:32.10, 3.0:43.60, 4.0:55.10, 5.0:66.60, 6.0:78.10, 7.0:90.80, 8.0:101.10, 9.0:112.60, 10.0:124.10, 15.0:182.10, 20.0:240.10, 25.0:298.10, 30.0:356.10}",
+}
+# Colissimo International OM2 + Recommandé R5
+{
+	label: "Colissimo TOM Recommandé R5",
+	code: "colissimo_tom_r5",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AQ,NC,PF,TF,WF",
+	conditions: "{price_excluding_tax}&gt;600.00",
+	fees: "{table 'weight' 0.5:16.80, 1.0:21.80, 2.0:33.30, 3.0:44.80, 4.0:56.30, 5.0:67.80, 6.0:79.30, 7.0:86.60, 8.0:102.30, 9.0:113.80, 10.0:125.30, 15.0:183.30, 20.0:241.30, 25.0:299.30, 30.0:357.30}",
+}
+
+# Colissimo International Zone A max 30 kg
+{
+	label: "Colissimo International Zone A",
+	code: "colissimo_a30",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "BE,BG,CH,CY,DE,DK,FI,GB,HU,IE,IT,LT,LU,LV,NO,PT,SI",
+	fees: "{table 'weight' 1.0:15.60, 2.0:17.15, 3.0:20.75, 4.0:24.35, 5.0:27.95, 6.0:31.55, 7.0:35.15, 8.0:38.75, 9.0:42.35, 10.0:45.95, 15.0:52.95, 20.0:59.95, 25.0:66.95, 30.0:73.95}",
+}
+# Colissimo International Zone A max 20 kg
+{
+	label: "Colissimo International Zone A",
+	code: "colissimo_a20",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AT,CZ,EE,ES,GI,GR,MT,NL,PL,SE,SM,VA",
+	fees: "{table 'weight' 1.0:15.60, 2.0:17.15, 3.0:20.75, 4.0:24.35, 5.0:27.95, 6.0:31.55, 7.0:35.15, 8.0:38.75, 9.0:42.35, 10.0:45.95, 15.0:52.95, 20.0:59.95}",
+}
+# Colissimo International Zone A max 15 kg
+{
+	label: "Colissimo International Zone A",
+	code: "colissimo_a15",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "SK",
+	fees: "{table 'weight' 1.0:15.60, 2.0:17.15, 3.0:20.75, 4.0:24.35, 5.0:27.95, 6.0:31.55, 7.0:35.15, 8.0:38.75, 9.0:42.35, 10.0:45.95, 15.0:52.95}",
+}
+
+# Colissimo International Zone B max 30 kg
+{
+	label: "Colissimo International Zone B",
+	code: "colissimo_b30",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AZ,BY,DZ,HR,IS,MA,ME,RO,RS,TR",
+	fees: "{table 'weight' 1.0:18.80, 2.0:20.65, 3.0:24.95, 4.0:29.25, 5.0:33.55, 6.0:37.85, 7.0:42.15, 8.0:46.45, 9.0:50.75, 10.0:55.05, 15.0:65.05, 20.0:75.05, 25.0:85.05, 30.0:95.05}",
+}
+# Colissimo International Zone B max 20 kg
+{
+	label: "Colissimo International Zone B",
+	code: "colissimo_b20",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AL,AM,BA,GE,MD,MK,RU,UA",
+	fees: "{table 'weight' 1.0:18.80, 2.0:20.65, 3.0:24.95, 4.0:29.25, 5.0:33.55, 6.0:37.85, 7.0:42.15, 8.0:46.45, 9.0:50.75, 10.0:55.05, 15.0:65.05, 20.0:75.05}",
+}
+# Colissimo International Zone B max 7 kg
+{
+	label: "Colissimo International Zone B",
+	code: "colissimo_b7",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "TN",
+	fees: "{table 'weight' 1.0:18.80, 2.0:20.65, 3.0:24.95, 4.0:29.25, 5.0:33.55, 6.0:37.85, 7.0:42.15}",
+}
+
+# Colissimo International Zone C max 30 kg
+{
+	label: "Colissimo International Zone C",
+	code: "colissimo_c30",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AE,BF,BI,BJ,BW,CA,CD,CI,CM,CV,EG,ET,GH,GN,IR,JO,KE,KW,LB,MG,MU,NE,NG,OM,QA,RW,SA,SC,SY,UG,US,YE,ZA,ZM",
+	fees: "{table 'weight' 1.0:21.70, 2.0:28.90, 3.0:37.90, 4.0:46.90, 5.0:55.90, 6.0:64.90, 7.0:73.90, 8.0:82.90, 9.0:91.90, 10.0:100.90, 15.0:123.90, 20.0:146.90, 25.0:169.90, 30.0:192.90}",
+}
+# Colissimo International Zone C max 20 kg
+{
+	label: "Colissimo International Zone C",
+	code: "colissimo_c20",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AO,BH,CF,CG,DJ,ER,GA,GW,IL,KM,LR,LS,LY,ML,MR,MW,MZ,NA,PR,SD,SH,SL,SN,ST,SZ,TD,TG,TZ,ZW",
+	fees: "{table 'weight' 1.0:21.70, 2.0:28.90, 3.0:37.90, 4.0:46.90, 5.0:55.90, 6.0:64.90, 7.0:73.90, 8.0:82.90, 9.0:91.90, 10.0:100.90, 15.0:123.90, 20.0:146.90}",
+}
+# Colissimo International Zone C max 10 kg
+{
+	label: "Colissimo International Zone C",
+	code: "colissimo_c10",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "GM,GQ",
+	fees: "{table 'weight' 1.0:21.70, 2.0:28.90, 3.0:37.90, 4.0:46.90, 5.0:55.90, 6.0:64.90, 7.0:73.90, 8.0:82.90, 9.0:91.90, 10.0:100.90}",
+}
+
+# Colissimo International Zone D max 30 kg
+{
+	label: "Colissimo International Zone D",
+	code: "colissimo_d30",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AU,BD,BO,BR,CK,CN,CR,EC,HK,JP,KH,LK,MV,NI,NZ,PA,PE,PK,PY,SG,UY",
+	fees: "{table 'weight' 1.0:24.00, 2.0:36.00, 3.0:48.00, 4.0:60.00, 5.0:72.00, 6.0:84.00, 7.0:96.00, 8.0:108.00, 9.0:120.00, 10.0:132.00, 15.0:156.00, 20.0:180.00, 25.0:228.00, 30.0:276.00}",
+}
+# Colissimo International Zone D max 25 kg
+{
+	label: "Colissimo International Zone D",
+	code: "colissimo_d25",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "HT,TV",
+	fees: "{table 'weight' 1.0:24.00, 2.0:36.00, 3.0:48.00, 4.0:60.00, 5.0:72.00, 6.0:84.00, 7.0:96.00, 8.0:108.00, 9.0:120.00, 10.0:132.00, 15.0:156.00, 20.0:180.00, 25.0:228.00}",
+}
+# Colissimo International Zone D max 20 kg
+{
+	label: "Colissimo International Zone D",
+	code: "colissimo_d20",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AF,AN,AR,BB,BM,BN,BS,BZ,CL,CO,CU,DM,DO,FJ,FK,GS,GT,GY,HN,ID,IN,KG,KI,KP,KR,KY,KZ,LA,LC,MM,MO,MS,MX,MY,NP,NR,PG,PH,SB,SR,SV,TH,TJ,TL,TO,TT,TW,UZ,VE,VG,VN,VU",
+	fees: "{table 'weight' 1.0:24.00, 2.0:36.00, 3.0:48.00, 4.0:60.00, 5.0:72.00, 6.0:84.00, 7.0:96.00, 8.0:108.00, 9.0:120.00, 10.0:132.00, 15.0:156.00, 20.0:180.00}",
+}
+# Colissimo International Zone D max 10 kg
+{
+	label: "Colissimo International Zone D",
+	code: "colissimo_d10",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "AG,AI,GD,GU,JM,MN,PN,TM,VC,WS",
+	fees: "{table 'weight' 1.0:24.00, 2.0:36.00, 3.0:48.00, 4.0:60.00, 5.0:72.00, 6.0:84.00, 7.0:96.00, 8.0:108.00, 9.0:120.00, 10.0:132.00}",
+}
+# Colissimo International Zone D max 5 kg
+{
+	label: "Colissimo International Zone D",
+	code: "colissimo_d5",
+	tracking_url: "{colissimo.tracking_url}",
+	destination: "TC",
+	fees: "{table 'weight' 1.0:24.00, 2.0:36.00, 3.0:48.00, 4.0:60.00, 5.0:72.00}",
+}
+
+###
+# Chronopost
+{
+	label: "Chronopost France",
+	code: "chronopost_france",
+	tracking_url: "http://www.fr.chronopost.com/fr/tracking/result?listeNumeros={tracking_number}",
+	destination: "FR",
+	fees: "{table 'weight' 2:17.56,3:18.4,4:19.24,5:20.08,6:20.92,7:21.76,8:22.6,9:23.44,10:24.28,15:28.48,20:32.68,25:36.88,30:41.08}",
+}
+{
+	label: "Chronopost DOM/TOM",
+	code: "chronopost_domtom",
+	tracking_url: "{chronopost_france.tracking_url}",
+	destination: "GP,MQ,RE",
+	fees: "{table 'weight' 0.5:56.5,1:70.03,1.5:82.59,2:95.15,2.5:107.71,3:120.27,3.5:124.49,4:128.71,4.5:132.93,5:137.15}",
+}
+{
+	label: "Chronopost Europe",
+	code: "chronopost_europe",
+	tracking_url: "{chronopost_france.tracking_url}",
+	destination: "ES,IT,PT,DE,GB,BE",
+	fees: "{table 'weight' 0.5:30.94,1:45.07,1.5:55.26,2:65.45,2.5:75.64,3:85.83,3.5:88.72,4:91.61,4.5:94.5,5:97.39}",
+}
+{
+	label: "Chronopost Suisse",
+	code: "chronopost_suisse",
+	tracking_url: "{chronopost_france.tracking_url}",
+	destination: "CH",
+	fees: "{table 'weight' 0.5:30.94,1:52.54,1.5:64.76,2:76.98,2.5:89.2,3:101.42,3.5:105.16,4:108.9,4.5:112.64,5:116.38}",
+}
+
+###
+# Export 3J
+{
+	label: "Export 3J",
+	code: "export_3j",
+	tracking_url: "http://212.157.222.70/webSearch?client=Entreprise&amp;barco={tracking_number}",
+	destination: "DE,DK,ES,FI,GB,IE,NL,PT,SE,CH",
+	fees: "{table 'weight' 0.05:3.75,0.1:4,0.2:6.5,0.5:8.5,1:11,1.5:13,2:14.8}",
+}
+</config>
+				<display_when_unavailable>0</display_when_unavailable>
+				<stop_to_first_match>0</stop_to_first_match>
+				<sort_order>1</sort_order>
+			</owebiashipping1>
+			<owebiashipping2>
+				<active>0</active>
+				<title>Owebia Shipping - Mode de livraison 2</title>
+				<model>Owebia_Shipping_2_Model_Carrier_OwebiaShipping2</model>
+				<tracking_view_url></tracking_view_url>
+				<config></config>
+				<display_when_unavailable>0</display_when_unavailable>
+				<stop_to_first_match>0</stop_to_first_match>
+				<sort_order>2</sort_order>
+			</owebiashipping2>
+			<owebiashipping3>
+				<active>0</active>
+				<title>Owebia Shipping - Mode de livraison 3</title>
+				<model>Owebia_Shipping_2_Model_Carrier_OwebiaShipping3</model>
+				<tracking_view_url></tracking_view_url>
+				<config></config>
+				<display_when_unavailable>0</display_when_unavailable>
+				<stop_to_first_match>0</stop_to_first_match>
+				<sort_order>3</sort_order>
+			</owebiashipping3>
+		</carriers>
+	</default>
+</config>
