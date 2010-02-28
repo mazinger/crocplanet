@@ -423,7 +423,7 @@ h1#logo                 { float:left; padding-left:18px;}
 .language-switcher label{ color:#fff; }
 .language-switcher .flag option { background-repeat:no-repeat; background-position:left center; padding-left:20px;margin-left:2px; }
 .toplinks-bar           { background:#fff; color:#000; padding-bottom:2px; text-align:right;height:18px; }
-.toplinks-bar .top-links              { padding-left:8px; float:right}
+.toplinks-bar .top-links              { /*padding-left:8px; float:right*/}
 .toplinks-bar .top-links,
 .toplinks-bar .top-links li           { display:inline; text-transform:capitalize;}
 .toplinks-bar .top-links li           { padding:0 4px 0 1px; }
