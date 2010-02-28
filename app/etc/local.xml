@@ -40,7 +40,8 @@
             </db>
             <default_setup>
                 <connection>
-                    <host><![CDATA[10.11.2.101]]></host>
+                    <host-www><![CDATA[10.11.2.101]]></host-www>
+                    <host><![CDATA[127.0.0.1]]></host>
                     <username><![CDATA[crocplanet]]></username>
                     <password><![CDATA[UvVifirEj8]]></password>
                     <dbname><![CDATA[crocplanet_prod]]></dbname>

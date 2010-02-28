@@ -20,19 +20,19 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category    Mage
- * @package     Mage_Bundle
+ * @package     Mage_Widget
  * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 -->
 <config>
     <modules>
-        <Mage_Bundle>
+        <Mage_Widget>
             <active>true</active>
             <codePool>core</codePool>
             <depends>
-                <Mage_Catalog />
+                <Mage_Cms />
             </depends>
-        </Mage_Bundle>
+        </Mage_Widget>
     </modules>
 </config>
