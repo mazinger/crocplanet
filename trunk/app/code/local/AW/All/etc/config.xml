@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+
+
+<config>
+  <modules>
+    <AW_All>
+      <version>2.0</version>
+    </AW_All>
+  </modules>
+  
+
+	<!--admin>
+	  <routers>
+		  <awall>
+			  <use>admin</use>
+			  <args>
+				  <module>AW_All</module>
+				  <frontName>awall</frontName>
+			  </args>
+		  </awall>
+	  </routers>
+	</admin-->
+
+	<global>
+		<blocks>
+		  <awall>
+			<class>AW_All_Block</class>
+		  </awall>
+		</blocks>
+		<resources>
+		  <awall_setup>
+			  <setup>
+				  <module>AW_All</module>
+			  </setup>
+			  <connection>
+				  <use>core_setup</use>
+			  </connection>
+		  </awall_setup>
+		  <awall_write>
+			  <connection>
+				  <use>core_write</use>
+			  </connection>
+		  </awall_write>
+		  <awall_read>
+			  <connection>
+				  <use>core_read</use>
+			  </connection>
+		  </awall_read>
+		</resources>
+		<models>
+			<awall>
+				<class>AW_All_Model</class>
+			</awall>
+		</models>
+
+	  <helpers>
+		  <awall>
+			  <class>AW_All_Helper</class>
+		  </awall>
+	  </helpers>
+	</global>
+	
+	<adminhtml>
+	
+		<acl>
+			<resources>
+				<all>
+					<title>Allow Everything</title>
+				</all>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<awall>
+											<title>aheadWorks - All</title>
+										</awall>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+		<events>
+            <controller_action_predispatch>
+                <observers>
+                    <awall>
+                        <type>singleton</type>
+                        <class>awall/feed</class>
+                        <method>check</method>
+                    </awall>
+                </observers>
+            </controller_action_predispatch>
+        </events>	
+	</adminhtml>
+	<default>
+		<awall>
+			<feed>
+				<url>ecommerce.aheadworks.com/blog/feed/?tag=feed</url>
+				<use_https>0</use_https>
+				<frequency>24</frequency>
+				<enable>0</enable>
+			</feed>
+		</awall>
+	</default>			
+</config>
