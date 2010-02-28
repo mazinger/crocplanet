@@ -24,32 +24,41 @@
  */
 ?>
 <div class="cart-shipping-block">
-<div style="float:left; width:225px;"><h4><?php echo $this->__('Estimate Shipping and Tax') ?></h4>
-<p><small><?php echo $this->__('Enter your destination to get a shipping estimate.') ?></small></p></div>
-<div style="margin-left:240px;">
-<form action="<?php echo $this->getUrl('checkout/cart/estimatePost') ?>" method="post" id="shipping-zip-form">
+  
+  
+<div style=""><h4><?php echo $this->__('Estimate Shipping and Tax') ?></h4>
+<p><small><?php echo $this->__('Enter your destination to get a shipping estimate.') ?></small></p>
+</div> 
+    
+<div class="" style="">
+	
+
+	<form action="<?php echo $this->getUrl('checkout/cart/estimatePost') ?>" method="post" id="shipping-zip-form">
     <fieldset>
     <ul class="form-list">
-        <li><label for="country"><?php echo $this->__('Country') ?> <span class="required">*</span></label><br/><span><?php echo Mage::getBlockSingleton('directory/data')->getCountryHtmlSelect($this->getEstimateCountryId()) ?></span></li>
-        <li><label for="region_id"><?php echo $this->__('State/Province') ?><?php if ($this->isStateProvinceRequired()):?> <span class="required">*</span><?php endif;?></label><br/>
-        <select id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" style="display:none"<?php echo ($this->isStateProvinceRequired() ? ' class="validate-select"' : '') ?>>
+        <li><label for="country" class="cart-label"><?php echo $this->__('Country') ?> <span class="required">*</span></label><br/><span   class="cart-label"><?php echo Mage::getBlockSingleton('directory/data')->getCountryHtmlSelect($this->getEstimateCountryId()) ?></span></li>
+        <li><label for="region_id"  class="cart-label"><?php echo $this->__('State/Province') ?><?php if ($this->isStateProvinceRequired()):?> <span class="required">*</span><?php endif;?></label><br/>
+        <select  class="cart-label" id="region_id" name="region_id" title="<?php echo $this->__('State/Province') ?>" style="display:none"<?php echo ($this->isStateProvinceRequired() ? ' class="validate-select"' : '') ?>>
             <option value=""><?php echo $this->__('Please select region, state or province') ?></option>
         </select>
         <input type="text" id="region" name="region" value="<?php echo $this->htmlEscape($this->getEstimateRegion()) ?>"  title="<?php echo $this->__('State/Province') ?>" class="input-text" style="display:none" /></li>
 
     <?php if($this->getCityActive()): ?>
-        <li><label for="city"><?php echo $this->__('City') ?><?php if ($this->isCityRequired()):?> <span class="required">*</span><?php endif;?></label><br/>
+        <li><label for="city"  class="cart-label"><?php echo $this->__('City') ?><?php if ($this->isCityRequired()):?> <span class="required">*</span><?php endif;?></label><br/>
         <input class="input-text<?php if ($this->isCityRequired()):?> required-entry<?php endif;?>" id="city" type="text" name="estimate_city" value="<?php echo $this->htmlEscape($this->getEstimateCity()) ?>" />
         </li>
     <?php endif; ?>
-    <li><label for="postcode"><?php echo $this->__('Zip/Postal Code') ?><?php if ($this->isZipCodeRequired()):?> <span class="required">*</span><?php endif;?></label><br/>
-    <input class="input-text validate-postcode<?php if ($this->isZipCodeRequired()):?> required-entry<?php endif;?>" type="text" id="postcode" name="estimate_postcode" value="<?php echo $this->htmlEscape($this->getEstimatePostcode()) ?>" /></li>
+    <li><label   class="cart-label" for="postcode"><?php echo $this->__('Zip/Postal Code') ?><?php if ($this->isZipCodeRequired()):?> <span class="required">*</span><?php endif;?></label><br/>
+    <input class="cart-label input-text validate-postcode<?php if ($this->isZipCodeRequired()):?> required-entry<?php endif;?>" type="text" id="postcode" name="estimate_postcode" value="<?php echo $this->htmlEscape($this->getEstimatePostcode()) ?>" /></li>
   </ul>
-    <p><a href="#" onclick="coShippingMethodForm.submit(); return false;"><img src="<?php echo $this->getSkinUrl('images/btn_cart_get_a_quote.gif') ?>" alt="<?php echo $this->__('Get a Quote') ?>"/></a></p>
+    <p align="right"  style="padding-right:45px;"><a href="#" onclick="coShippingMethodForm.submit(); return false;">
+    	<img 
+        src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/bt_valider2_off.gif') ?>" 
+        alt="<?php echo $this->__('Get a Quote') ?>"/></a></p>
        <script type="text/javascript">
            $('region_id').setAttribute('defaultValue', "<?php echo $this->getEstimateRegionId() ?>");
        </script>
-       </fieldset>
+    </fieldset>
 </form>
 <script type="text/javascript">
     new RegionUpdater('country', 'region', 'region_id', <?php echo $this->helper('directory')->getRegionJson() ?>);
@@ -60,7 +69,7 @@
 <form id="co-shipping-method-form" action="<?php echo $this->getUrl('checkout/cart/estimateUpdatePost') ?>">
     <dl class="shipment-methods" id="shipping-rates">
         <?php foreach ($_shippingRateGroups as $code => $_rates): ?>
-            <dt><?php echo $this->getCarrierName($code) ?></dt>
+            <dt class="no-display"><?php echo $this->getCarrierName($code) ?></dt>
             <dd>
                 <ul>
                 <?php foreach ($_rates as $_rate): ?>
@@ -69,7 +78,11 @@
                             <?php echo $_rate->getErrorMessage() ?>
                        <?php else: ?>
                             <input name="estimate_method" type="radio" value="<?php echo $this->htmlEscape($_rate->getCode()) ?>" id="s_method_<?php echo $_rate->getCode() ?>"<?php if($_rate->getCode()===$this->getAddressShippingMethod()) echo ' checked="checked"' ?>/>
-                            <label for="s_method_<?php echo $_rate->getCode() ?>"><?php echo $_rate->getMethodTitle() ?>
+                            <img align="absmiddle" style="margin:10px" src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/logo_colissimo.gif') ?>">
+                            
+                            <label style="width:300px;display:inline-block;" for="s_method_<?php echo $_rate->getCode() ?>"><?php echo $_rate->getMethodTitle() ?>
+                            </label>
+                            <span style="text-align:right; display:inline-block; width:80px;"
                             <strong>
                             <?php $_excl = $this->getShippingPrice($_rate->getPrice(), $this->helper('tax')->displayShippingPriceIncludingTax()); ?>
                             <?php $_incl = $this->getShippingPrice($_rate->getPrice(), true); ?>
@@ -78,7 +91,7 @@
                             <?php if ($this->helper('tax')->displayShippingBothPrices() && $_incl != $_excl): ?>
                                 (<?php echo $this->__('Incl. Tax'); ?> <?php echo $_incl; ?>)
                             <?php endif; ?>
-                            </strong></label>
+                            </strong></span>
                        <?php endif ?>
                     </li>
                 <?php endforeach; ?>
@@ -86,7 +99,9 @@
             </dd>
         <?php endforeach; ?>
     </dl>
-    <p><input type="image" src="<?php echo $this->getSkinUrl('images/btn_update_total.gif') ?>" name="do" alt="<?php echo $this->__('Update Total') ?>"/></p>
+    <p align="right" style="padding-right:45px;"><input type="image" 
+    	src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/bt_valider2_off.gif') ?>" name="do" 
+        alt="<?php echo $this->__('Update Total') ?>"/></p>
 </form>
 <?php endif; ?>
 

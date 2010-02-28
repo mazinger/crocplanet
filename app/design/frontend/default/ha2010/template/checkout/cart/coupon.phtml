@@ -25,15 +25,23 @@
  */
 ?>
     <form id="discount-coupon-form" action="<?php echo $this->getUrl('checkout/cart/couponPost') ?>" method="post">
-    <fieldset class="cart-coupon-block">
-    <h4><?php echo $this->__('Discount Codes') ?></h4>
-    <div style="margin-left:240px;">
+    <fieldset class="cart-coupon-block" style="background-color:#eee;padding:5px">
+    <div class="f-left">
+      <h4 style="height:11px;"><?php echo $this->__('Discount Codes') ?></h4>
+      <br /><label for="coupon_code" style="font-weight:normal"><?php echo $this->__('Enter your coupon code if you have one.') ?></label>
+     </div>
+    
+  <div class="f-right" style="margin-left:0px;margin-top:-27px;">
         <input type="hidden" name="remove" id="remove-coupone" value="0"/>
     <?php if(!strlen($this->getCouponCode())): ?>
-        <label for="coupon_code"><?php echo $this->__('Enter your coupon code if you have one.') ?></label>
-        <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/> &nbsp;<input type="image" name="do" src="<?php echo $this->getSkinUrl('images/btn_cart_apply.gif') ?>" alt="<?php echo $this->__('Apply Coupon') ?>"/>
+        
+    <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/> &nbsp;<input type="image" name="do" 
+    	src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_ok_off.gif') ?>" 
+        alt="<?php echo $this->__('Apply Coupon') ?>"/>
     <?php else: ?>
-        <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/>&nbsp;<a href="#" onclick="discountForm.submit(true)"><img src="<?php echo $this->getSkinUrl('images/btn_cart_cancel.gif') ?>" alt="<?php echo $this->__('Cancel Coupon') ?>" style="vertical-align:middle;" /></a><?php endif;?>
+        <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/>&nbsp;<a href="#" onclick="discountForm.submit(true)">
+        	<img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_ok_off.gif') ?>" 
+            alt="<?php echo $this->__('Cancel Coupon') ?>" style="vertical-align:middle;" /></a><?php endif;?>
     </div>
     </fieldset>
 </form>

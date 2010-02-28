@@ -1,0 +1,26 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ *
+ * @category   AW
+ * @package    AW_FBIntegrator
+ * @copyright  Copyright (c) 2003-2009 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/LICENSE-M1.txt
+ */
+?>
+<?php  if ( $this->isSecure() ): ?>
+	<script src="https://ssl.connect.facebook.com/js/api_lib/v0.4/XdCommReceiver.js" type="text/javascript"></script>
+	<script src="https://ssl.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/<?= $this->getLocale() ?>" type="text/javascript"></script>
+<?php else: ?>
+	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/XdCommReceiver.js" type="text/javascript"></script>
+	<script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/<?= $this->getLocale() ?>" type="text/javascript"></script>
+<?php endif; ?>
+
+

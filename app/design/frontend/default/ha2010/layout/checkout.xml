@@ -75,8 +75,8 @@ Default layout, loads most of the pages
                 </block>
 
                 <block type="core/text_list" name="checkout.cart.methods" as="methods">
-                    <block type="checkout/onepage_link" name="checkout.cart.methods.onepage" template="checkout/onepage/link.phtml"/>
-                    <block type="checkout/multishipping_link" name="checkout.cart.methods.multishipping" template="checkout/multishipping/link.phtml"/>
+                    <!--block type="checkout/onepage_link" name="checkout.cart.methods.onepage" template="checkout/onepage/link.phtml"/-->
+                    <!--block type="checkout/multishipping_link" name="checkout.cart.methods.multishipping" template="checkout/multishipping/link.phtml"/-->
                 </block>
 
                 <block type="checkout/cart_coupon" name="checkout.cart.coupon" as="coupon" template="checkout/cart/coupon.phtml"/>
@@ -84,7 +84,12 @@ Default layout, loads most of the pages
                 <block type="checkout/cart_crosssell" name="checkout.cart.crosssell" as="crosssell" template="checkout/cart/crosssell.phtml"/>
 
                 <block type="checkout/cart_totals" name="checkout.cart.totals" as="totals" template="checkout/cart/totals.phtml"/>
+				<block type="checkout/onepage_link" name="checkout.cart.valider"  as="valider" template="checkout/onepage/link.phtml"/>
+				<block type="cms/block" name="cms_footer_cart" before="-">
+					<action method="setBlockId"><block_id>footer_cart</block_id></action>
+				</block>
             </block>
+         
         </reference>
     </checkout_cart_index>
 
