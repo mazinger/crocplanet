@@ -28,9 +28,9 @@
 <div class="mini-welcome">
 	<?php echo $this->getLayout()->getBlock('header')->getWelcome()?>
 	<?php if ($this->helper('customer')->isLoggedIn()):?>
-	&nbsp;|&nbsp;<a href="<?php echo $this->helper('customer')->getLogoutUrl() ?>"><?php echo $this->__('Log Out') ?></a> 
+	<a class="logging" href="<?php echo $this->helper('customer')->getLogoutUrl() ?>"><?php echo $this->__('Log Out') ?></a> 
 	<?php else:?>
-	&nbsp;|&nbsp;<a href="<?php echo $this->helper('customer')->getLoginUrl() ?>"><?php echo $this->__('Log In') ?></a> 
+	<a class="logging"  href="<?php echo $this->helper('customer')->getLoginUrl() ?>"><?php echo $this->__('Log In') ?></a> 
 	<?php endif;?>
 </div>
 
@@ -39,7 +39,7 @@
     <fieldset style="text-align:right;">
         <legend><?php //echo $this->__('Search Site') ?></legend>
             <input id="search" type="text" class="input-text" name="<?php echo $this->helper('catalogSearch')->getQueryParamName() ?>" value="<?php echo $this->helper('catalogSearch')->getEscapedQueryText() ?>" />
-            <input type="image" src="<?php echo $this->getSkinUrl('images/btn_mini_search.gif') ?>" alt="<?php echo $this->__('Go') ?>" />
+            <input class="button-21-21" type="submit" src="<?php echo $this->getSkinUrl('images/btn_mini_search.gif') ?>" alt="<?php echo $this->__('Go') ?>" value=""/>
             <div id="search_autocomplete" class="search-autocomplete"></div>
             <script type="text/javascript">
             //<![CDATA[
