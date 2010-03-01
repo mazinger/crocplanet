@@ -317,7 +317,7 @@ table.pager td.sort-by .active:hover { color:#444; }
 .container-header .bar {width:960px; margin:0px auto 0 auto; text-align:left; height:23px; padding-top:2px;}
 .container-header .bar .mini-welcome {float:left;font-weight:normal;  color:#ccc;padding-top:2px; font-size:10px;}
 .container-header .bar .mini-welcome a {color:#ccc}
-
+.mini-welcome a.logging {border-left:1px solid;color:#CCCCCC;margin-left:10px;padding-left:10px;}
 
 .container 		{ width:960px; margin:0px auto 0 auto; text-align:left; }
 
@@ -425,7 +425,7 @@ h1#logo                 { float:left; padding-left:18px;}
 .toplinks-bar           { background:#fff; color:#000; padding-bottom:2px; text-align:right;height:18px; }
 .toplinks-bar .top-links              { /*padding-left:8px; float:right*/}
 .toplinks-bar .top-links,
-.toplinks-bar .top-links li           { display:inline; text-transform:capitalize;}
+.toplinks-bar .top-links li           { display:inline; /*text-transform:capitalize;*/}
 .toplinks-bar .top-links li           { padding:0 4px 0 1px; }
 .toplinks-bar .top-links a,
 .toplinks-bar .top-links a:hover      { color:#000; }
@@ -455,6 +455,17 @@ h1#logo                 { float:left; padding-left:18px;}
 	padding:3px;
 	width:212px;
 	
+}
+.button-21-21 {
+	width:23px; height:21px;
+	border-color:#000;
+	border-style:solid;
+	border-width:1px;
+	background:#fff url(../images/axiadesign/divers/bt_ok_off.gif) no-repeat scroll 0 0;
+	cursor:pointer;
+}
+.button-21-21:hover{
+	background-image:url(../images/axiadesign/divers/bt_ok_on.gif);
 }
 
 .search-autocomplete { position:absolute; /*left:45px !important; top:22px !important; width:216px!important;*/ }
