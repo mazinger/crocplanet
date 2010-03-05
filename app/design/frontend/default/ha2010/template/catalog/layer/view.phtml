@@ -37,10 +37,8 @@
             <h3 class="title"><?php echo $this->__('Shop by') ?></h3>
         </div>
 
-
-        <?php echo $this->getStateHtml() ?>
         <?php if($this->canShowOptions()): ?>
-        <h4><?php echo $this->__('Shopping Options') ?></h4>
+        <!--h4><?php echo $this->__('Shopping Options') ?></h4-->
         <div class="content no-padding">
             <div class="narrow-by">
                 <dl id="narrow-by-list">
@@ -58,6 +56,9 @@
             </div>
         </div>
         <?php endif; ?>
+		
+        <?php echo $this->getStateHtml() ?>
+
     </div>
 <?php endif; ?>
 <!-- [ends] .browse-by // -->

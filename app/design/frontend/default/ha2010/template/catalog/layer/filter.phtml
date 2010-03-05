@@ -35,8 +35,11 @@
 <ol>
 <?php foreach ($this->getItems() as $_item): ?>
     <li>
-        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>"><?php echo $_item->getLabel() ?></a>
-        (<?php echo $_item->getCount() ?>)
+        <a href="<?php echo $this->urlEscape($_item->getUrl()) ?>">
+			<img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/ico_vide.gif')?>" />
+				<?php echo $_item->getLabel() ?>
+		</a>
+		<?php //echo $this->__(" (%s)", $_item->getCount()) ?>
     </li>
 <?php endforeach ?>
 </ol>
