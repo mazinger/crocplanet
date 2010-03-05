@@ -47,8 +47,8 @@
                     <?php $_filters = $this->getFilters() ?>
                     <?php foreach ($_filters as $_filter): ?>
                     <?php if($_filter->getItemsCount()): ?>
-                    <dt><?php echo $this->__($_filter->getName()) ?></dt>
-                    <dd>
+                    <dt class="<?php echo strtolower($_filter->getName())?>"><?php echo $this->__($_filter->getName()) ?></dt>
+                    <dd class="<?php echo strtolower($_filter->getName())?>">
                     <?php echo $_filter->getHtml() ?>
                     </dd>
                     <?php endif; ?>

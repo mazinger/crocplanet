@@ -26,7 +26,7 @@
 /************** ALL LEVELS  *************/ /* Style consistent throughout all nav levels */
 #nav li { position:relative;text-transform:uppercase; text-align:left; color:#ddd	}
 #nav li.over { z-index:999; }
-#nav a  { display:block; line-height:1.3em; text-decoration:none; }
+#nav a  { display:block; line-height:22px; text-decoration:none; }
 #nav a:hover { text-decoration:underline; }
 #nav span { display:block; cursor:pointer; white-space:nowrap; }
 #nav li ul span {white-space:normal; }
