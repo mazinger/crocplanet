@@ -479,7 +479,7 @@ h1#logo                 { float:left; padding-left:18px;}
 
 /********************** Sidebars */
 .sidebar .box { margin-bottom:20px; }
-.sidebar .content { padding:8px 10px; background:#f6f6f6; }
+.sidebar .content { padding:8px 10px; /*background:#f6f6f6;*/ }
 .sidebar h3 { font-size:1.05em; text-transform:uppercase; }
 .sidebar h4 { color:#444; text-transform:uppercase; }
 .sidebar .actions { text-align:right; }
@@ -750,8 +750,8 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 	text-transform:capitalize;
     }
 .narrowed-category li {clear:both; }	
-.layered-nav .narrow-by dt { border-top:1px solid #fff; padding:8px 8px 0 8px; font-size:1.1em; }
-.layered-nav .narrow-by dd { padding:0 8px 8px 8px; border-bottom:1px solid #ddd; }
+.layered-nav .narrow-by dt { border-top:1px solid #000;border-bottom:1px solid #000; padding:2px 2px 2px 17px; font-size:1.1em; background-color:#FFFFFF;}
+.layered-nav .narrow-by dd { padding:2px 2px 2px 27px; /*border-bottom:1px solid #ddd;*/ background-color:#FFFFFF;}
 .layered-nav .narrow-by a,
 .layered-nav .narrow-by a:hover { color:#444; }
 .layered-nav .widget-btn {
@@ -764,7 +764,8 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
     font-size:1.1em;
     }
 .narrow-by dd li { margin-bottom:.3em; line-height:1.3em; }
-.narrow-by dd.last { background:none; }
+.narrow-by dd.shoe_size li {width:58px; display:inline-block;}
+.narrow-by dd.last { /*background:none;*/ }
 .layered-nav .label { font-weight:bold; }
 
 
