@@ -165,7 +165,7 @@ Customer account pages, rendered for all tabs in dashboard
     <customer_account>
         <!-- Mage_Customer -->
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left-croc.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-compte.phtml</template></action>
         </reference>
 
         <reference name="left">
@@ -198,7 +198,7 @@ Customer account home dashboard layout
 		<remove name="wishlist_sidebar"></remove>
 		
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left-croc.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-compte.phtml</template></action>
         </reference>
 		
         <reference name="content">

@@ -57,19 +57,23 @@
 <?php else: ?>
 <p class="product-image">
     <?php
-        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(300).'" alt="'.$this->htmlEscape($_product->getImageLabel()).'"/>';
+        $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'image')->resize(360,220).'" alt="'.$this->htmlEscape($_product->getImageLabel()).'"/>';
         echo $_helper->productAttribute($_product, $_img, 'image');
     ?>
 </p>
 <?php endif; ?>
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
-    <h4><?php echo $this->__('More Views') ?></h4>
-    <ul>
+	<img src="<?php echo $this->getSkinUrl('images/axiadesign/5_fichprod/sub_autrevues.gif')?>" />
+    <h4 class=""><?php echo $this->__('ZOOM + ') ?></h4>    
+	<h4 class=""><?php echo $this->__('More Views') ?></h4> 
+</div>
+<div class="more-thumbs">
+    <ul style="width:600px">
     <?php foreach ($this->getGalleryImages() as $_image): ?>
         <li>
             <a href="#" onclick="popWin('<?php echo $this->getGalleryUrl($_image) ?>', 'gallery', 'scrollbars=yes,width=300,height=300,resizable=yes');return false;">
-                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(70, 70); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(100, 100); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>"/>
             </a>
         </li>
     <?php endforeach; ?>

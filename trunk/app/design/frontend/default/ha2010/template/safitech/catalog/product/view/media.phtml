@@ -57,9 +57,9 @@ function jSelectImage(url) {
 		      <div 
 		      onclick="popWin('<?php echo $this->getGalleryUrl($_image) ?>', 'gallery', 'width=300,height=300,left=50,top=50,location=no,status=yes,scrollbars=yes,resizable=yes'); return false;" 
 		      class="jqzoom"><img <?php echo $style; ?> id="image<?php echo $i; ?>" 
-		      width="250px" 
-		      height="250px" 
-		      src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail2', $_image->getFile())->resize(250, 250); ?>" 
+		      width="360px" 
+		      height="240px" 
+		      src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail2', $_image->getFile())->resize(360, 240); ?>" 
 		      alt="<?php echo $this->htmlEscape($_product->getName()) ?>"
 		        jqimg="<?php echo $_image->url; ?>"></div>
 		    <?php ++$i; endforeach; ?>
@@ -68,18 +68,22 @@ function jSelectImage(url) {
 
 <?php else: ?>
 <a href="<?php echo $this->helper('catalog/image')->init($_product, 'image'); ?>" class="jqzoom" style="" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
-<img id="image" src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(265); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" />
+<img id="image" src="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize(360, 240); ?>" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" />
 </a>
 <?php endif; ?>
 
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">
-	<h4>More Views</h4>
+	<div class="more-views-header">
+        <h4 class=""><?php echo $this->__('ZOOM + ') ?></h4>
+        <h4 style="color:#999999"><?php echo $this->__('More Views') ?></h4>
+        <!--img src="<?php echo $this->getSkinUrl('images/axiadesign/05_fichprod/sub_autrevues.gif')?>" /-->
+    </div>
     <ul>
     <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
         <li>
         <a href="#" onclick="jSelectImage('<?php echo $i ?>'); return false;">
-        	<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(56); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+        	<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(110); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
 		</a>
         </li>
     <?php ++$i; endforeach; ?>
