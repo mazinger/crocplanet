@@ -1,16 +1,16 @@
 .product-img-box {
 	/*float:left;
-width:100%;*/
+	width:100%;*/
 }
 .jqzoom{
-	float:left;
+	/*float:left;*/
 	position:relative;
 	padding:0px;
 	cursor:pointer;
 }
 
 .jqzoom img{
-	float:left;
+	/*float:left;*/
 }
 
 
@@ -50,7 +50,8 @@ div.jqZoomPup {
 }
 .jqzoom {
 	z-index:100;
-	float:none;
+	/*float:none;*/
+	text-align:center;
 }
 
 div.jqZoomPup {
@@ -64,6 +65,7 @@ div.jqZoomPup {
 }
 
 #image {
-	margin-top:20px;
-	float:left;
+	/*margin-top:20px;
+	float:left;*/
+	width:360px;
 }
