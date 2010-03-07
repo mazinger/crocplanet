@@ -41,6 +41,8 @@
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 <form action="<?php echo $this->getAddToCartUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+
+
         <div class="product-img-box">
             <?php echo $this->getChildHtml('media') ?>
         </div>
@@ -48,11 +50,7 @@
         <div class="product-info-box">
             <h3 class="product-name"><?php echo $_helper->productAttribute($_product, $this->htmlEscape($_product->getName()), 'name') ?></h3>
 
-            <?php if ($this->canEmailToFriend()): ?>
-                <a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a><br />
-            <?php endif; ?>
-
-            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
+            
 
             <fieldset class="no-display">
               <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
@@ -62,32 +60,46 @@
             <?php echo $this->getChildHtml('product_type_data') ?>
             <?php echo $this->getChildHtml('tierprices') ?>
 
-            <?php if (!$this->hasOptions()):?>
-                <div class="add-to-boxes">
-                <?php if($_product->isSaleable()): ?>
-                    <?php echo $this->getChildHtml('addtocart') ?>
-                <?php endif; ?>
-                <?php echo $this->getChildHtml('addto') ?>
-                </div>
-            <?php else:?>
-                <?php echo $this->getChildHtml('addto') ?>
-            <?php endif; ?>
-
             <?php if ($_product->getShortDescription()):?>
                 <h4 class="border-head"><?php echo $this->__('Quick Overview') ?></h4>
                 <div class="short-description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
             <?php endif;?>
 
-            <?php echo $this->getChildHtml('other');?>
+			<?php echo $this->getChildHtml('other');?>
+            
+            
+            <div id="reviews" style="margin:10px 0"><?php echo $this->getReviewsSummaryHtml($_product, false, true)?></div>
 
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+            <?php if ($this->canEmailToFriend()): ?>
+              <img align="absmiddle" style="margin-right: 5px"
+              	src="<?php echo $this->getSkinUrl('images/axiadesign/divers/ico_mail.gif')?>"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a><br />
             <?php endif; ?>
+
+
+            
+    </div>
+        
+         <div class="clear"></div>
+         
+         <div id="" class="product-button-box" style="" >
+        
+			<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                <?php endif; ?>
+                
+            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+            <?php endif; ?>
+            
+             <div class="add-to-boxes">
+             	<?php //echo $this->getChildHtml('addtocart') ?>
+                <?php if($_product->isSaleable()): ?>
+                	<?php echo $this->getChildHtml('addto') ?>
+                <?php endif; ?>
+                
+            </div>
         </div>
-        <div class="clear"></div>
-        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-        <?php endif; ?>
+   
 </form>
 <script type="text/javascript">
 //<![CDATA[

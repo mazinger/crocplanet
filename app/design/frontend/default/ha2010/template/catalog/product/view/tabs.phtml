@@ -33,7 +33,7 @@
 <ul class="tabs">
     <?php foreach ($this->getTabs() as $_index => $_tab): ?>
         <?php if($this->getChildHtml($_tab['alias'])): ?>
-            <li id="product_tabs_<?php echo $_tab['alias'] ?>" <?php echo !$_index ? 'class="active first"' : '' ?>><a href="#"><?php echo $_tab['title']?></a></li>
+            <li id="product_tabs_<?php echo $_tab['alias'] ?>" <?php echo !$_index ? 'class="active first"' : '' ?>><a href="#<?php echo $_tab['alias'] ?>"><?php echo $_tab['title']?></a></li>
         <?php endif; ?>
     <?php endforeach; ?>
 </ul>

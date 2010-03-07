@@ -71,11 +71,13 @@
             
             <?php if(1||$this->getLastPageNum()>1): ?>
             <td class="pages">
-                <strong><?php echo $this->__('Page:') ?></strong>
+                <strong><?php //echo $this->__('Page:') ?></strong>
                 <ol>
                 <?php if (!$this->isFirstPage()): ?>
                     <li>
-                        <a href="<?php echo $this->getPreviousPageUrl() ?>"><img src="<?php echo $this->getSkinUrl('images/pager_arrow_left.gif') ?>" alt="<?php echo $this->__('Previous') ?>" /></a>
+                        <a href="<?php echo $this->getPreviousPageUrl() ?>"><?php echo $this->__('Previous') ?>
+                        	<img src="<?php echo $this->getSkinUrl('images/axiadesign/04_boutik/bt_prev_on.gif') ?>" 
+                            alt="<?php echo $this->__('Previous') ?>" /></a>
                     </li>
                 <?php endif ?>
                 <?php foreach ($this->getPages() as $_page): ?>
@@ -87,7 +89,9 @@
                 <?php endforeach;; ?>
                 <?php if (!$this->isLastPage()): ?>
                     <li>
-                        <a href="<?php echo $this->getNextPageUrl() ?>"><img src="<?php echo $this->getSkinUrl('images/pager_arrow_right.gif') ?>" alt="<?php echo $this->__('Next') ?>" /></a>
+                        <a href="<?php echo $this->getNextPageUrl() ?>">
+                        	<img src="<?php echo $this->getSkinUrl('images/axiadesign/04_boutik/bt_next_on.gif') ?>" 
+                            alt="<?php echo $this->__('Next') ?>" /><?php echo $this->__('Next') ?></a>
                     </li>
                 <?php endif ?>
                 </ol>

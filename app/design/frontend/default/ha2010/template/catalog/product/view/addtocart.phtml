@@ -38,6 +38,9 @@
         <span class="qty-box"><label for="qty"><?php echo $this->__('Qty') ?>:</label>
         <input name="qty" type="text" class="input-text qty" id="qty" maxlength="12" value="<?php echo $_qty ?>"/></span>
         <?php endif; ?>
-        <a href="#" onclick="productAddToCartForm.submit(); return false;"<?php if($_product->isGrouped()): ?> class="right"<?php endif;?>><img src="<?php echo $this->getSkinUrl('images/btn_add_to_cart.gif');?>" alt="<?php echo $this->__('Add to Cart') ?>" class="v-middle" style="margin:0 0 0 5px;" /></a>
+        <a href="#" onclick="productAddToCartForm.submit(); return false;"<?php if($_product->isGrouped()): ?> class="right"<?php endif;?>>
+        	<img src="<?php echo $this->getSkinUrl('images/axiadesign/05_fichprod/bt_ajpanier_off.gif');?>" 
+            alt="<?php echo $this->__('Add to Cart') ?>" 
+            class="v-middle" style="" /></a>
     </fieldset>
 <?php endif; ?>

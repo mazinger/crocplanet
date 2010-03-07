@@ -69,7 +69,7 @@ Product reviews page
     <review_product_list>
         <!-- Mage_Review -->
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-review.phtml</template></action>
         </reference>
         <reference name="head">
             <action method="addJs"><script>varien/product.js</script></action>
@@ -94,7 +94,7 @@ Product reviews page
 
     <review_product_view>
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            <action method="setTemplate"><template>page/2columns-review.phtml</template></action>
         </reference>
         <reference name="content">
             <block type="review/view" name="review_view"/>
