@@ -67,13 +67,25 @@
                 <block type="core/template" name="recaptcha.box" as="recaptcha_box" template="fontis/recaptcha/recaptcha.phtml"/>
             </block>
         </reference>
+		
+		<reference name="breadcrumbs">
+			<action method="addCrumb">
+				<crumbName>Accueil</crumbName><crumbInfo><label>Accueil</label><title>Accueil</title><link>/</link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Contacts</crumbName>
+                <crumbInfo><label>Contacts</label><title>Contacts</title></crumbInfo>
+            </action>
+        </reference>
+		
     </contacts_contacts_index>
 
     <customer_account_create>
         <remove name="customer_form_register"/>
 
         <reference name="content">
-            <block type="customer/form_register" name="recaptcha_form_register" template="fontis/recaptcha/register.phtml">
+			<block type="customer/form_register" name="recaptcha_form_register" template="customer/form/register.phtml">
+            <!--block type="customer/form_register" name="recaptcha_form_register" template="fontis/recaptcha/register.phtml"-->
                 <block type="core/template" name="recaptcha.box" as="recaptcha_box" template="fontis/recaptcha/recaptcha.phtml"/>
             </block>
         </reference>
