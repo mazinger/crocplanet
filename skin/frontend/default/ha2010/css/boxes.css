@@ -305,7 +305,7 @@ table.pager td.sort-by .active:hover { color:#444; }
 
 table.pager td a {color:#fff}
 table.pager li a {}
-table.pager li img {}
+table.pager li img {vertical-align:middle;}
 
 
 /************************************************************/
@@ -340,12 +340,16 @@ table.pager li img {}
 
 .layout-1column-cms .page-head {overflow:hidden}
 .layout-1column-cms h3 {font-size:26px; border-bottom:1px solid #000 ;}
-.layout-1column-cms .f-left {width:200px; padding:49px 0 20px 26px;}
+.layout-1column-cms .f-left {width:182px; padding:10px 0 20px 26px;}
 .layout-1column-cms .f-left li {padding:5px 0;}
 .layout-1column-cms .f-left a {}
-.layout-1column-cms .f-left a:hover {color:#0066FF}
+.layout-1column-cms .f-left a:hover,
+.layout-1column-cms .f-left a:selected {color:#0066FF}
 
-.layout-1column-cms .f-right {width:680px; padding:20px; text-align:justify}
+.layout-1column-cms .f-left img.haut {margin: 400px 0 0 -26px}
+
+.layout-1column-cms .f-right {width:718px; padding:15px; text-align:justify}
+.layout-1column-cms  label {#000}
 
 .layout-2columns {}
 .layout-3columns {}
