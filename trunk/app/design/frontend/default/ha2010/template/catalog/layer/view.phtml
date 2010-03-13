@@ -44,8 +44,17 @@
                 <dl id="narrow-by-list">
                     <?php $_filters = $this->getFilters() ?>
                     <?php foreach ($_filters as $_filter): ?>
-                    <?php if($_filter->getItemsCount()): ?>
-                    <dt class="<?php echo strtolower($_filter->getName())?>"><?php echo $this->__($_filter->getName()) ?></dt>
+                    <?php if($_filter->getItemsCount()): 
+						$name = $this->__($_filter->getName());
+						if ($name == Mage::helper('catalog')->__('Category')) {
+							$current_category = Mage::registry('current_category') ;
+							if (!empty($current_category)) {
+								$name = $current_category->getName();
+							}
+						}else {
+						}
+					?>
+                    <dt class="<?php echo strtolower($_filter->getName())?>"><?php echo  $name;//$this->__($_filter->getName()) ?></dt>
                     <dd class="<?php echo strtolower($_filter->getName())?>">
                     <?php echo $_filter->getHtml() ?>
                     </dd>

@@ -55,40 +55,22 @@
     <div class="container">
         <?php echo $this->getChildHtml('header') ?>
         <div class="outline-creator">
-            <div class="toplinks-bar" style="">
+            <div class="toplinks-bar">
             	<?php echo $this->getChildHtml('topMenu') ?>
                 <?php echo $this->getChildHtml('store_language') ?>
                 <?php echo $this->getChildHtml('topLinks') ?>
              </div>
-           
-            
-            <!--div class="page-head-boutique" style="">
-                <h3><?php echo $this->__('My Account') ?></h3>
-            </div-->
-            
+            <div class="search-bar2l">
+                <?php echo $this->getChildHtml('breadcrumbs') ?>
+            </div>
             <div class="middle layout-2columns layout-2columns-boutique">
                 <div class="col-left sidebar" id="col-left">
                     <?php echo $this->getChildHtml('left') ?>&nbsp;
                 </div>
                 <div class="col-main" id="main">
                     <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php
-                    	$_category  = Mage::registry('current_category');
-						if (!empty($_category )) 
-	    					$_imgUrl = $_category->getImageUrl();
-					?>                    
-                     <div class="search-bg" 
-                     	style="<?php if(!empty($_imgUrl)) echo $this->__('background-image:url(%s)',$_imgUrl) ?>" >
-						<?php echo $this->getChildHtml('breadcrumbs') ?>
-                    </div>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
-            </div>
-            <div class="toolbar-bottom" id="toolbar2">
-            	<?php echo $this->getLayout()
-				->getBlock('product_list_toolbar')
-				->setTemplate('catalog/product/list/toolbar2.phtml')
-				->toHtml(); ?>
             </div>
         </div>
         <div class="footer" id="footer">

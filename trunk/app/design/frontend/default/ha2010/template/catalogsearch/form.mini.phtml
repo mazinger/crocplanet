@@ -28,9 +28,9 @@
 <div class="mini-welcome">
 	<?php echo $this->getLayout()->getBlock('header')->getWelcome()?>
 	<?php if ($this->helper('customer')->isLoggedIn()):?>
-	<a class="logging" href="<?php echo $this->helper('customer')->getLogoutUrl() ?>"><?php echo $this->__('Log Out') ?></a> 
+	<a class="logging" href="<?php echo $this->helper('customer')->getLogoutUrl() ?>"><?php echo Mage::helper('customer')->__('Log Out') ?></a> 
 	<?php else:?>
-	<a class="logging"  href="<?php echo $this->helper('customer')->getLoginUrl() ?>"><?php echo $this->__('Log In') ?></a> 
+	<a class="logging"  href="<?php echo $this->helper('customer')->getLoginUrl() ?>"><?php echo Mage::helper('customer')->__('Log In') ?></a> 
 	<?php endif;?>
 </div>
 

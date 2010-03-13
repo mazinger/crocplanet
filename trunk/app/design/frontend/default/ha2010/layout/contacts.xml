@@ -27,6 +27,11 @@
 -->
 <layout version="0.1.0">
     <default>
+		<remove name="left"/>
+		<reference name="root">
+			<action method="setTemplate"><template>page/1column-cms.phtml</template></action>
+		</reference>
+		
         <reference name="footer_links">
             <!--action method="addLink" translate="label title" module="contacts" ifconfig="contacts/contacts/enabled"><label>Contact Us</label><url>contacts</url><title>Contact Us</title><prepare>true</prepare></action-->
         </reference>
@@ -34,11 +39,12 @@
 
     <contacts_index_index>
         <reference name="root">
-            <action method="setTemplate"><template>page/2columns-left.phtml</template></action>
+            
             <action method="setHeaderTitle" translate="title" module="contacts"><title>Contact Us</title></action>
         </reference>
         <reference name="content">
             <block type="core/template" name="contactForm" template="contacts/form.phtml"/>
         </reference>
+		
     </contacts_index_index>
 </layout>

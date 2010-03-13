@@ -25,12 +25,13 @@
  */
 ?>
 <div class="language-switcher">
-	<a href="#">
+	
     	<img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_euro_on.gif') ?>" border=0
-        	style="margin-right:2px;padding-right:5px;padding-left:10px;border-right: 1px solid #000; "></a>
-<?php foreach ($this->getStores() as $_lang): ?>
-	<a href="#" "<?php echo $_lang->getCurrentUrl() ?>">
-    	<img src="<?php echo $this->getSkinUrl('images/flag_'.$_lang->getCode().'.gif') ?>" border=0></a>
+        	style="margin-right:2px;padding-right:5px;padding-left:10px;border-right: 1px solid #000; ">
+            <a href="#"></a>
+<?php foreach ($this->getStores() as $_lang): ?>	
+    	<img src="<?php echo $this->getSkinUrl('images/flag_'.$_lang->getCode().'.gif') ?>" border=0>
+        <a href="#" "<?php echo $_lang->getCurrentUrl() ?>"></a>
 <?php endforeach; ?>
 </div>
 <?php if(0 && count($this->getStores())>1): ?>
