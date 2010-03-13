@@ -1,0 +1,20 @@
+<?php
+	/**
+		http://www.magentix.fr 
+
+		<block type="socialbookmarking/bookmarks" name="bookmarks" as="bookmarks" template="bookmarks/bookmarks.phtml" />
+	**/
+?>
+
+<?php
+	$bookmarks = $this->getBookmarks(); // Get bookmarks collection
+	$pageInfos = $this->getPageInfos(); // Get page informations : URL, bit.ly URL and Meta title
+?>
+
+<div class="social-bookmarking">
+
+<?php foreach($bookmarks as $bookmark): ?>
+	<a href="<?php echo $bookmark->getBookmarkUrl($pageInfos) ?>" <?php echo $bookmark->getBookmarkTarget() ?> title="<?php echo $bookmark->getName() ?>"><?php echo $bookmark->getBookmarkImage() ?></a> 
+<?php endforeach; ?>
+
+</div>
