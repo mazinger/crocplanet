@@ -32,7 +32,8 @@
  */
 ?>
 <div class="page-head">
-    <h3><?php echo $this->__('Create an Account') ?></h3>
+    <!--<h3><?php echo $this->__('Create an Account') ?></h3> -->
+    <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/03_creacompte/btitle_creac.gif') ?>">
 </div>
 
 
@@ -44,7 +45,8 @@
       <input type="hidden" name="success_url" value="<?php echo $this->getSuccessUrl() ?>"/>
       <input type="hidden" name="error_url" value="<?php echo $this->getErrorUrl() ?>"/>
         <div class="head-alt2">
-          <h4 class="title"><?php echo $this->__('Personal Information') ?></h4>
+          <!--<h4 class="title"><?php echo $this->__('Personal Information') ?></h4> -->
+          <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/03_creacompte/title_infopers.gif') ?>">
           </div>
           <ul>
           	<li><p class="required" style="margin:28px 0 0 550px; position:absolute;"><?php echo $this->__('* Required Fields') ?></p></li>
@@ -64,7 +66,7 @@
               </li>
             <li>
               <input type="checkbox" name="is_subscribed2" title="" value="1" id="is_subscribed2" <?php if($this->getFormData()->getIsSubscribed()): ?> checked="checked"<?php endif ?>/>
-              <label for="is_subscribed"><?php echo $this->__('J\'accepte de recevoir les bons plans des partenaires de CrocPlanet') ?></label>
+              <label for="is_subscribed2"><?php echo $this->__('J\'accepte de recevoir les bons plans des partenaires de CrocPlanet') ?></label>
               </li>
               <?php endif ?>
   <?php $_dob = $this->getLayout()->createBlock('customer/widget_dob') ?>
@@ -136,7 +138,8 @@
       <fieldset class="group-select wide">
         <br />
         <div class="head-alt2">
-          <h4 class="title"><?php echo $this->__('Login Information') ?></h4>
+          <!--<h4 class="title"><?php echo $this->__('Login Information') ?></h4> -->
+          <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/03_creacompte/title_infoconn.gif') ?>">
           </div>
           <ul>
           
@@ -160,11 +163,13 @@
       
       <div class="button-set" style="border:0;margin-top:0">
         
-          <a href="<?php echo $this->getBackUrl() ?>" class="f-left croc-button" ><?php echo $this->__('Back') ?></a>
+          <a href="<?php echo $this->getBackUrl() ?>" class0="f-left croc-button" >
+		  	<?php //echo $this->__('Back') ?>
+            <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_retour_off.gif') ?>"></a>
         
-          <input class="f-right croc-button"  name="submit" type="submit" value="<?php echo $this->__('Valider') ?>"/>
+          <input type="image"  class="f-right croc-button1"  name="submit" alt=""
+          	value="<?php echo $this->__('Valider') ?>" src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_valider_off.gif') ?>"/>
         
-        	<!--input type="image" src="<?php echo $this->getSkinUrl('images/btn_submit.gif') ?>" alt="<?php echo $this->__('Submit') ?>"/-->
       </div>
     </form>
 

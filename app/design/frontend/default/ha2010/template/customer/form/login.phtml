@@ -32,7 +32,8 @@
  */
 ?>
 <div class="page-head">
-    <h3><?php echo $this->__('Login or Create an Account') ?></h3>
+    <!--h3><?php echo $this->__('Login or Create an Account') ?></h3-->
+    <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/02_inscription/btitle_id.gif') ?>">
 </div>
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <form action="<?php echo $this->getPostActionUrl() ?>" method="post" id="login-form">
@@ -40,7 +41,8 @@
     <div class="col-1">
         <div class="content">
             <div class="head-alt2">
-                <h4 class="title"><?php echo $this->__('New Customers') ?></h4>
+                <!--h4 class="title"><?php echo $this->__('New Customers') ?></h4-->
+                <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/02_inscription/title_comm.gif') ?>">
             </div>
             <p><?php echo $this->__('By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.') ?></p>
         </div>
@@ -51,10 +53,14 @@
     <div class="col-2">
         <div class="content">
             <div class="head-alt2">
-                <h4 class="title"><?php echo $this->__('Registered Customers') ?></h4>
+                <!--h4 class="title"><?php echo $this->__('Registered Customers') ?></h4-->
+                <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/02_inscription/title_enreg.gif') ?>">
             </div>
             <p><?php echo $this->__('If you have an account with us, please log in.') ?></p>
             <ul class="form-list">
+            	<div class="" style="position:absolute; margin-left:308px">
+                    <p class="required" ><?php echo $this->__('* Required Fields') ?></p>
+                </div>
                     <li>
                         <label for="email"><?php echo $this->__('Email Address') ?> <span class="required">*</span></label><br/>
                         <input name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" title="<?php echo $this->__('Email Address') ?>" id="email" type="text" class="input-text required-entry" style="width:250px;"/>
@@ -64,7 +70,8 @@
                         <input name="login[password]" type="password" class="input-text required-entry validate-password" id="pass" style="width:250px;"/>
                     </li>
                 </ul>
-                <p class="required"><?php echo $this->__('* Required Fields') ?></p>
+                
+                
     </div>
     <div class="button-set">
         <a href="<?php echo $this->getForgotPasswordUrl() ?>" class="f-left"><?php echo $this->__('Forgot Your Password?') ?></a>
