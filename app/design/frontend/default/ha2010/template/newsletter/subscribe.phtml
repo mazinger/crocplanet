@@ -30,10 +30,10 @@
         <label for="newsletter"><?php echo $this->__('Newsletter Sign-up') ?>:</label>
 		<br>
         <div class="input-box"> <!-- Created for the validation error accomodation -->
-            <input name="email" type="text" id="newsletter" value="<?php echo $this->__('Enter your email address') ?>" class="required-entry validate-email input-text"/>
+            <input name="email" type="text" id="newsletter" value="<?php echo $this->__('Enter your email address') ?>" class="required-entry validate-email input-text" onfocus="if (this.value=='<?php echo $this->__('Enter your email address') ?>')this.value='';" onblur="if (this.value=='')this.value='<?php echo $this->__('Enter your email address') ?>';" />
         </div>
 		
-        <input type="image" src="<?php echo $this->getSkinUrl('images/btn_mini_submit.gif') ?>" value="<?php echo $this->__('Sign me up') ?>"/>
+        <input type="image" src="<?php echo $this->getSkinUrl('images/btn_mini_submit.gif') ?>" value="<?php echo $this->__('Sign me up') ?>" style="float:left;"/>
 </fieldset>
 </form>
 <script type="text/javascript">

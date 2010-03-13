@@ -41,14 +41,13 @@
         <h4>Skip to Store Area:</h4>
         <ul>
             <li><a href="#main"><?php echo $this->__('Skip to Main Content') ?></a></li>
-            <li><a href="#col-left"><?php echo $this->__('Skip to Left Column') ?></a></li>
             <li><a href="#footer"><?php echo $this->__('Skip to Footer') ?></a></li>
         </ul>
     </div>
 	
     <div class="container-header">
  		<div class="bar">
-        	<?php //echo $this->getLayout()->getBlock('header')->getWelcome() ?>
+			<?php //echo $this->getLayout()->getBlock('header')->getWelcome() ?>
             <?php echo $this->getChildHtml('topSearch') ?>
         </div>	
 	</div>
@@ -56,39 +55,22 @@
         <?php echo $this->getChildHtml('header') ?>
         <div class="outline-creator">
             <div class="toplinks-bar" style="">
-            	<?php echo $this->getChildHtml('topMenu') ?>
-                <?php echo $this->getChildHtml('store_language') ?>
-                <?php echo $this->getChildHtml('topLinks') ?>
-             </div>
-           
-            
-            <!--div class="page-head-boutique" style="">
-                <h3><?php echo $this->__('My Account') ?></h3>
-            </div-->
-            
-            <div class="middle layout-2columns layout-2columns-boutique">
-                <div class="col-left sidebar" id="col-left">
-                    <?php echo $this->getChildHtml('left') ?>&nbsp;
-                </div>
-                <div class="col-main" id="main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php
-                    	$_category  = Mage::registry('current_category');
-						if (!empty($_category )) 
-	    					$_imgUrl = $_category->getImageUrl();
-					?>                    
-                     <div class="search-bg" 
-                     	style="<?php if(!empty($_imgUrl)) echo $this->__('background-image:url(%s)',$_imgUrl) ?>" >
-						<?php echo $this->getChildHtml('breadcrumbs') ?>
-                    </div>
-                    <?php echo $this->getChildHtml('content') ?>
+            	<div class="f-left"><?php echo $this->getChildHtml('topMenu') ?></div>
+                
+                <div class="f-right">
+                	<?php echo $this->getChildHtml('store_language') ?>
+                    <?php echo $this->getChildHtml('topLinks') ?>                     
                 </div>
             </div>
-            <div class="toolbar-bottom" id="toolbar2">
-            	<?php echo $this->getLayout()
-				->getBlock('product_list_toolbar')
-				->setTemplate('catalog/product/list/toolbar2.phtml')
-				->toHtml(); ?>
+            <div class="search-bar1" style="">
+                <?php echo $this->getChildHtml('breadcrumbs') ?>
+            </div>
+            <div class="middle layout-1column layout-1column-cms" id="main">
+                <?php echo $this->getChildHtml('global_messages') ?>
+                <?php echo $this->getChildHtml('content') ?>
+            </div>
+            <div id="toolbar2" style="padding-left:10px;background-color:#000">
+            	<img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/ico_top.gif')?>" style="margin:0 4px" /><a href="#main" style="color:#FFF"><?php echo $this->__('Haut') ?></a>
             </div>
         </div>
         <div class="footer" id="footer">

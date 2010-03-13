@@ -80,14 +80,16 @@
                             alt="<?php echo $this->__('Previous') ?>" /></a>
                     </li>
                 <?php endif ?>
-                <?php foreach ($this->getPages() as $_page): ?>
+                <?php 
+					if ($this->getPages())
+					foreach ($this->getPages() as $_page): ?>
                     <?php if ($this->isPageCurrent($_page)): ?>
                         <li><span class="on"><?php echo $_page ?></span></li>
                     <?php else: ?>
                         <li><a href="<?php echo $this->getPageUrl($_page) ?>"><?php echo $_page ?></a></li>
                     <?php endif ?>
                 <?php endforeach;; ?>
-                <?php if (!$this->isLastPage()): ?>
+                <?php if (1 || !$this->isLastPage()): ?>
                     <li>
                         <a href="<?php echo $this->getNextPageUrl() ?>">
                         	<img src="<?php echo $this->getSkinUrl('images/axiadesign/04_boutik/bt_next_on.gif') ?>" 

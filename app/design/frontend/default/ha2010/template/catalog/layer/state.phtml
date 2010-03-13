@@ -40,7 +40,8 @@
             <li>
                 <a href="<?php echo $_filter->getRemoveUrl() ?>" class="widget-btn"><img src="<?php echo $this->getSkinUrl('images/list_remove_btn.gif') ?>" alt="<?php echo $this->__('Remove This Item') ?>"/></a>
                 <span class="label"><?php echo $this->__($_filter->getName()) ?>: </span>
-					<img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/ico_check.gif')?>" /><?php echo $_filter->getLabel() ?>
+                <span class="state" style=""><?php echo $_filter->getLabel() ?>
+                </span>    
             </li>
         <?php endforeach; ?>
         </ol>
