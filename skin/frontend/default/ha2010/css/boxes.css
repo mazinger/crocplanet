@@ -326,10 +326,26 @@ table.pager li img {}
 
 .header         { margin-bottom:5px; z-index:999; text-align:left;padding-top:11px; }
 .middle         { min-height:350px; padding:6px 0 50px 0; }
-.layout-1column { clear:both;padding:10px 0; /* 30px 40px 30px;*/ }
+
 .col-left       { float:left; width:220px; margin-left:16px; }
 .col-right       { float:right; width:195px; margin-right:13px; }
 .col-main       { float:right; width:705px; }
+
+.layout-1column { clear:both;padding:10px 0; /* 30px 40px 30px;*/ }
+.layout-1column-cms {
+	clear:both;margin-top:-17px;
+	padding:10px 0;border:1px solid #000000;
+	font-size:12px;
+}
+
+.layout-1column-cms .page-head {overflow:hidden}
+.layout-1column-cms h3 {font-size:26px; border-bottom:1px solid #000 ;}
+.layout-1column-cms .f-left {width:200px; padding:49px 0 20px 26px;}
+.layout-1column-cms .f-left li {padding:5px 0;}
+.layout-1column-cms .f-left a {}
+.layout-1column-cms .f-left a:hover {color:#0066FF}
+
+.layout-1column-cms .f-right {width:680px; padding:20px; text-align:justify}
 
 .layout-2columns {}
 .layout-3columns {}
@@ -355,7 +371,7 @@ table.pager li img {}
 	}
 .layout-2columns-boutique .search-bg .search-bar {
 	margin:0;
-	background:none;
+	background:#000; opacity:0.5;
 	border:0;
 	height:16px;
 	padding:0 12px;
@@ -837,7 +853,7 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 	text-transform:capitalize;
     }
 .narrowed-category li {clear:both; }	
-.narrowed-category li img {border:0; margin:0 2px -1px 2px; }
+.narrowed-category li img {border:0; margin:0 2px 2px 2px; }
 .layered-nav .narrow-by dt { border-top:1px solid #000;border-bottom:1px solid #000; padding:2px 2px 2px 17px; font-size:1.1em; background-color:#FFFFFF;}
 .layered-nav .narrow-by dd { padding:2px 2px 2px 27px; /*border-bottom:1px solid #ddd;*/ background-color:#FFFFFF;}
 .layered-nav .narrow-by a,
@@ -854,8 +870,8 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 .narrow-by dd li { margin-bottom:.3em; line-height:1.3em; }
 .narrow-by dd.shoe_size li {width:58px; display:inline-block;}
 .narrow-by dd.last { /*background:none;*/ }
-.layered-nav .label { font-weight:bold; float:left; width:100px; /*overflow:hidden;*/}
-
+.layered-nav .label { font-weight:bold; float:left; width:80px; /*overflow:hidden;*/}
+.layered-nav .state { float:left; width:80px; background:transparent url(../images/axiadesign/divers/ico_check.gif) no-repeat 0 3px;padding-left:12px; white-space:nowrap; overflow:hidden;}
 
 
 /********************* Tool Tips */
