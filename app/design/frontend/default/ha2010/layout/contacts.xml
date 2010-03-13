@@ -26,11 +26,17 @@
  */
 -->
 <layout version="0.1.0">
-    <default>
-		<remove name="left"/>
+    <default>		
+		
 		<reference name="root">
 			<action method="setTemplate"><template>page/1column-cms.phtml</template></action>
 		</reference>
+		
+		<!--reference name="breadcrumbs">
+			<action method="addCrumb">
+				<crumbName>Accueil</crumbName><crumbInfo><label>Accueil</label><title>Accueil</title><url></url></crumbInfo>
+            </action>
+		</reference-->
 		
         <reference name="footer_links">
             <!--action method="addLink" translate="label title" module="contacts" ifconfig="contacts/contacts/enabled"><label>Contact Us</label><url>contacts</url><title>Contact Us</title><prepare>true</prepare></action-->
@@ -39,9 +45,21 @@
 
     <contacts_index_index>
         <reference name="root">
-            
+            <remove name="left"/>
             <action method="setHeaderTitle" translate="title" module="contacts"><title>Contact Us</title></action>
+			<action method="setTemplate"><template>page/1column-cms.phtml</template></action>
         </reference>
+		
+		<reference name="breadcrumbs">
+			<action method="addCrumb">
+				<crumbName>Accueil</crumbName><crumbInfo><label>Accueil</label><title>Accueil</title><link></link></crumbInfo>
+            </action>
+            <action method="addCrumb">
+                <crumbName>Contacts</crumbName>
+                <crumbInfo><label>Contacts</label><title>Contacts</title></crumbInfo>
+            </action>
+        </reference>
+		
         <reference name="content">
             <block type="core/template" name="contactForm" template="contacts/form.phtml"/>
         </reference>
