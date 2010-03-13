@@ -26,25 +26,46 @@
 ?>
 <div class="padder" >
 
+
 <div class="page-head">
-    <h3><?php echo Mage::helper('contacts')->__('Contact Us') ?></h3>
+<!--h3><?php echo Mage::helper('contacts')->__('Contact Us') ?></h3-->
+<img src="<?php echo $this->getSkinUrl('images/axiadesign/08_footer/btitle_contact.gif') ?>">
 </div>
-<div class="form">
+<div class="f-left">
+  <ul>
+    <li><strong><strong><a href="http://www.crocplanet.com/a-propos-de-crocplanet">A propos de CrocPlanet</a></strong></strong></li>
+    <li><strong><strong><a href="http://www.crocplanet.com/faq">  FAQ : questions fréquentes</a></strong></strong></li>
+    <li><strong><strong><a href="http://www.crocplanet.com/guide-des-tailles">  Guide des tailles</a></strong></strong></li>
+    <li><strong><strong><a href="http://www.crocplanet.com/contacts">  Nous contacter</a></strong></strong></li>
+    <li><strong><strong><a href="http://www.crocplanet.com/service-client">  Service client</a></strong></strong></li>
+    <li><strong><strong><a href="http://www.crocplanet.com/cgv">  CGV</a></strong></strong></li>
+    <li><strong><strong><a href="http://www.crocplanet.com/mentions-legales">  Mentions légales</a></strong></strong></li>
+  </ul>
+</div>
+
+<div class="f-right" style="color:#000">
 
 	<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
     <form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post">
-            <div class="head-alt2">
-                <h4 class="title"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h4>
+            <div class="head-alt2" style="border:0">
+                <!--h4 class="title"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h4-->
+                <img src="<?php echo $this->getSkinUrl('images/axiadesign/08_footer/btitle_contact_txt.gif') ?>">
             </div>
-        <fieldset class="group-select"  style="padding:10px 20px">
+        <fieldset class="group-select"  style="padding:0">
+        	<div class="" style="position:absolute; margin-left:408px">
+                <p class="required" ><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
+            </div>
             <ul>
             <li>
                     <div class="input-box">
                         <label for="name"><?php echo Mage::helper('contacts')->__('Name') ?> <span class="required">*</span></label><br />
                         <input name="name" id="name" title="<?php echo Mage::helper('contacts')->__('Name') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserName()) ?>" class="required-entry input-text" type="text"/>
                     </div>
-    
+            </li>
+         
+
+    		<li>
                     <div class="input-box">
                         <label for="email"><?php echo Mage::helper('contacts')->__('Email') ?> <span class="required">*</span></label><br />
                         <input name="email" id="email" title="<?php echo Mage::helper('contacts')->__('Email') ?>" value="<?php echo $this->htmlEscape($this->helper('contacts')->getUserEmail()) ?>" class="required-entry input-text validate-email" type="text"/>
@@ -69,13 +90,14 @@
                     </li>
                     </ul>
         </fieldset>
-        <div class="button-set">
-            <p class="required"><?php echo Mage::helper('contacts')->__('* Required Fields') ?></p>
-            <input type="image" src="<?php echo $this->getSkinUrl('images/btn_submit.gif');?>" alt="<?php echo Mage::helper('contacts')->__('Submit') ?>"/>
+        <div class="">
+            <input type="image" src="<?php echo $this->getSkinUrl('images/axiadesign/08_footer/bt_envmess_off.gif');?>" alt="<?php echo Mage::helper('contacts')->__('Submit') ?>"/>
         </div>
     </form>
     <script type="text/javascript">
         var contactForm = new VarienForm('contactForm', true);
     </script>
-</div "form">   
+    
+</div "right">   
+
 </div "padder">
