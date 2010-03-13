@@ -29,7 +29,7 @@
 body        { background:#fff url(../images/body_trans.gif) 0 0 repeat; color:#222; font:11px/1.55em arial, helvetica, sans-serif; text-align:center; }
 a           { color:#222; text-decoration:none; }
 a:hover     { color:#222; text-decoration:underline; }
-a img       { border:0; /*margin-bottom:-2px;*/ vertical-align:middle;}
+a img       { border:0; /*margin-bottom:-2px;*/ vertical-align:absmiddle;}
 :focus      { outline:0; }
 
 /* Heading */
