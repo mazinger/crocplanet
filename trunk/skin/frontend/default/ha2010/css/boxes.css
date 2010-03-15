@@ -361,6 +361,9 @@ table.pager li img {vertical-align:middle;}
 .layout-2columns {}
 .layout-3columns {}
 
+
+ .layout-2columns-search {margin-top:-17px;}
+ 
 .layout-2columns-boutique {padding:0; border:1px solid #000000;}
 .layout-2columns-boutique  .col-main .padder {padding:0;}
 .layout-2columns-boutique  .col-main.generic-product-grid td {width:27%;}
@@ -382,7 +385,7 @@ table.pager li img {vertical-align:middle;}
 	}
 .layout-2columns-boutique .search-bg .search-bar {
 	margin:0;
-	background:#000; opacity:0.5;
+	background:#000; opacity:0.5; filter: alpha(opacity = 50);
 	border:0;
 	height:16px;
 	padding:0 12px;
