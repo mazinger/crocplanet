@@ -338,7 +338,7 @@ table.pager li img {vertical-align:middle;}
 .col-right       { float:right; width:195px; margin-right:13px; }
 .col-main       { float:right; width:705px; }
 
-.layout-1column { clear:both;padding:10px 0; /* 30px 40px 30px;*/ }
+.layout-1column { clear:both;padding:10px 0 0 0; /* 30px 40px 30px;*/ }
 .layout-1column-cms {
 	clear:both;margin-top:-17px;
 	padding:10px 0;border:1px solid #000000;
@@ -593,7 +593,7 @@ h1#logo                 { float:left; padding-left:18px;}
 .search-autocomplete li.odd { background:#f6f6f6; }
 .search-autocomplete li.selected { background:#ecf9ea; }
 
-
+.layout-2columns-compte .sidebar .box { margin-top:26px; }
 
 /********************** Sidebars */
 .sidebar .box { margin-bottom:20px; }
@@ -1161,7 +1161,7 @@ td.attributes-col h4.title a        { font-weight:bold; }
     }
 tr.grand_total td, p.grand_total { padding-top:5px; padding-bottom:5px; }
 
-.cart-footer {text-align:right;}
+.cart-footer {text-align:right; margin-left:-300px;}
 .cart-footer a{ background-color:#000; color:#fff; padding:0 3px;}
 .cart-footer a:hover{ background-color:#3360AA; color:#fff}
 
@@ -1618,3 +1618,12 @@ table.print .price-incl-tax .price { display:inline; }
 .std i,
 .std em { font-style:italic; }
 .std .a-top { text-align:right; }
+
+/* Catalog Colors */
+.additional-colors {padding: 0; margin-bottom: 9px; padding-left: 2px; font-weight: bold;}
+.additional-colors a{background-color: #fff; font-size: 13px; color: #de2419; padding-left: 6px;}
+.catalogcolors img {margin: 4px; padding: 0;}
+.product-image {margin-right: 15px;}
+ul.catalogcolors {display: block; float: left; width: 100%;}
+.catalogcolors li {display: block; float: left;}
+.catalogcolors li.selected {background: url(../images/border.png) no-repeat;}
