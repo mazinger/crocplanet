@@ -30,15 +30,15 @@
             <p><?php echo $this->__('') ?></p>
             <ul class="form-list">
                 <li>
-                    <label for="username"><?php echo $this->__('Email Address') ?> <span class="required">*</span></label><br />
+                    <label for="username"><?php echo Mage::helper('customer')->__('Email Address') ?> <span class="required">*</span></label><br />
                     <input name="login[username]" value="<?php echo $this->htmlEscape($this->getUsername()) ?>" title="<?php echo $this->__('Email Address') ?>" id="username" type="text" class="input-text validate-email required-entry" style="width:250px;" />
                 </li>
                 <li>
-                    <label for="password"><?php echo $this->__('Password') ?> <span class="required">*</span></label><br />
+                    <label for="password"><?php echo Mage::helper('customer')->__('Password') ?> <span class="required">*</span></label><br />
                     <input name="login[password]" type="password" class="input-text required-entry validate-password" id="password" style="width:250px;" />
                 </li>
                 <li>
-                    <label for="confirmation"><?php echo $this->__('Confirm Password') ?> <span class="required">*</span></label><br />
+                    <label for="confirmation"><?php echo Mage::helper('customer')->__('Confirm Password') ?> <span class="required">*</span></label><br />
                     <input name="login[confirmation]" type="password" class="input-text required-entry validate-cpassword" id="confirmation" style="width:250px;" />
                 </li>
                 <?php if ($this->isNewsletterEnabled()): ?>
