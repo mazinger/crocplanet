@@ -36,7 +36,7 @@
     <li><strong><strong><a href="http://www.crocplanet.com/a-propos-de-crocplanet">A propos de CrocPlanet</a></strong></strong></li>
     <li><strong><strong><a href="http://www.crocplanet.com/faq">  FAQ : questions fréquentes</a></strong></strong></li>
     <li><strong><strong><a href="http://www.crocplanet.com/guide-des-tailles">  Guide des tailles</a></strong></strong></li>
-    <li><strong><strong><a href="http://www.crocplanet.com/contacts">  Nous contacter</a></strong></strong></li>
+    <li><strong><strong><a href="http://www.crocplanet.com/contacts" class="on">  Nous contacter</a></strong></strong></li>
     <li><strong><strong><a href="http://www.crocplanet.com/service-client">  Service client</a></strong></strong></li>
     <li><strong><strong><a href="http://www.crocplanet.com/cgv">  CGV</a></strong></strong></li>
     <li><strong><strong><a href="http://www.crocplanet.com/mentions-legales">  Mentions légales</a></strong></strong></li>
@@ -48,9 +48,11 @@
 	<div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
 
     <form action="<?php echo $this->getFormAction(); ?>" id="contactForm" method="post">
-            <div class="head-alt2" style="border:0">
+            <div class="head-alt2" style="border:0; text-align:left">
                 <!--h4 class="title"><?php echo Mage::helper('contacts')->__('Contact Information') ?></h4-->
-                <img src="<?php echo $this->getSkinUrl('images/axiadesign/08_footer/btitle_contact_txt.gif') ?>">
+                <!--img src="<?php echo $this->getSkinUrl('images/axiadesign/08_footer/btitle_contact_txt.gif') ?>"-->
+                Merci de bien vouloir remplir le formulaire ci-dessous. Une réponse vous parviendra dans un délai de 6h ouvrées maximum. Pour toute demande, merci de nous transmettre le plus d'informations possible afin que nous puissons vous répondre correctement dans les plus brefs délais.<br />
+Notre service client est ouvert du lundi au vendredi de 10h à 17h (hors jours fériés).
             </div>
         <fieldset class="group-select"  style="padding:0">
         	<div class="" style="position:absolute; margin-left:408px">
@@ -91,7 +93,7 @@
                     </ul>
         </fieldset>
         <div class="">
-            <input type="image" src="<?php echo $this->getSkinUrl('images/axiadesign/08_footer/bt_envmess_off.gif');?>" alt="<?php echo Mage::helper('contacts')->__('Submit') ?>"/>
+            <input type="image" class="bt_envmess" src0="<?php echo $this->getSkinUrl('images/axiadesign/08_footer/bt_envmess_off.gif');?>" alt="" "<?php echo Mage::helper('contacts')->__('Submit') ?>"/>
         </div>
     </form>
     <script type="text/javascript">
