@@ -468,6 +468,8 @@ margin:17px 17px auto;}
 .layout-2columns-review #product_tabs_additional_contents ,
 .layout-2columns-review #product_tabs_tags_contents 
 	{padding:15px; min-height:200px;}
+	
+.mini-compare-products {display:none}
 
 .layout-2columns-review .sidebar .content {background:none; padding:0;}
 .layout-2columns-review .base-mini {border:none}
@@ -500,7 +502,9 @@ margin:17px 17px auto;}
 	padding:1px 20px;
 	text-transform:uppercase;
 	}
-a.croc-button , a.croc-button:hover {color:#000; }
+	
+.croc-button {color:#000;  background-color:#fff; text-decoration:none}
+.croc-button:hover {color:#fff; background-color:#000;text-decoration:none}
 
 .croc-button2 {
 	background-color:#555;
@@ -511,11 +515,24 @@ a.croc-button , a.croc-button:hover {color:#000; }
 	padding:1px 20px;
 	/*text-transform:uppercase;*/
 	}
-a.croc-button2 , a.croc-button2:hover {color:#FFFFFF; }
+a.croc-button2 {color:#FFFFFF; background-color:#555; text-decoration:none }
+a.croc-button2:hover {color:#FFFFFF; background-color:#000;}
 
-.croc-valider, .croc-valider a {color:#FFFFFF;background-color:#000;  }
-.croc-delete , .croc-delete a {color:#CCC;background-color:#555; }
-.croc-valider, .croc-delete {font-size:9px; width:120px; text-transform:uppercase;white-space:nowrap}
+
+.croc-valider, .croc-delete {
+	font-size:9px; width:120px; text-transform:uppercase;white-space:nowrap;
+	border:1px solid #000; padding: 0 3px
+}
+/*
+.croc-delete a {text-decoration:none ; color:#CCC}
+.croc-valider a{text-decoration:none ; color:#fff}
+*/
+.croc-valider  {color:#fff;background-color:#000;  }
+.croc-delete  {color:#CCC;background-color:#555; }
+
+
+.croc-valider:hover {color:#000;background-color:#fff; text-decoration:none;}
+.croc-delete:hover {color:#fff;background-color:#000; text-decoration:none; }
 
 .croc-border {
 	border:1px solid #000; padding:20px; min-height:300px;
@@ -1162,7 +1179,7 @@ td.attributes-col h4.title a        { font-weight:bold; }
 tr.grand_total td, p.grand_total { padding-top:5px; padding-bottom:5px; }
 
 .cart-footer {text-align:right; margin-left:-300px;}
-.cart-footer a{ background-color:#000; color:#fff; padding:0 3px;}
+.cart-footer a{ background-color:#000; color:#fff; padding:0 3px;text-decoration:none;}
 .cart-footer a:hover{ background-color:#3360AA; color:#fff}
 
 /* Tax details */
@@ -1431,9 +1448,9 @@ tr.grand_total td, p.grand_total { padding-top:5px; padding-bottom:5px; }
 .account-nav .head { border:none; background:#666; }
 .account-nav .head .title { color:#fff; }
 .account-nav li a, .account-nav li.on { padding:3px 0;  }
-.account-nav li a { display:block;/* border-bottom:1px solid #ddd;*/ }
+.account-nav li a { display:block; font-size:14px;/* border-bottom:1px solid #ddd;*/ }
 .account-nav li a, .account-nav li a:hover { color:#5f5d5c; text-decoration:none; }
-.account-nav li.on { /*border-bottom:1px solid #ddd;*/ font-weight:bold; color:#3460A9}
+.account-nav li.on { /*border-bottom:1px solid #ddd;*/ font-weight:bold; color:#3460A9; font-size:14px;}
 .account-nav li.on a { border:none; padding:0; }
 .account-nav li.on a, .account-nav li.on a:hover { color:#ea7900; }
 .account-nav li.last, .account-nav li.last a { border-bottom:0; }

@@ -65,3 +65,25 @@
 
 /************ 3RD+ LEVEL ************/
 #nav ul ul { top:5px; }
+
+
+.bt_ok {
+	background: url(../images/axiadesign/divers/bt_ok_off.gif) no-repeat scroll 0% 0%;
+	width:21px; height:19px;
+}
+.bt_ok:hover {
+	background: url(../images/axiadesign/divers/bt_ok_on.gif) no-repeat scroll 0% 0%;
+}
+
+
+.bt_envmess {
+	background: url(../images/axiadesign/08_footer/bt_envmess_off.gif) no-repeat scroll 0% 0%;
+	width:183px; height:19px;display:block;
+}
+.bt_envmess:hover {
+	background: url(../images/axiadesign/08_footer/bt_envmess_on.gif) no-repeat scroll 0% 0%;
+}
+
+
+
+a.on {color:#3460A9}
