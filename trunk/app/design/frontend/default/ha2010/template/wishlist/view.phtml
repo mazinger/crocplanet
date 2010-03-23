@@ -69,14 +69,14 @@
                 </td>
               <td class="a-center">
                 <?php if($item->isSaleable()): ?>
-                <div class="croc-valider" id="valider" style="margin-top:0"><a href="<?php echo $this->getItemAddToCartUrl($item) ?>" class="croc-valider">
+                <div class="" id="valider" style="margin-top:0"><a href="<?php echo $this->getItemAddToCartUrl($item) ?>" class="croc-valider">
                       <?php echo $this->__('Add to Cart') ?>
                       <!--img src="<?php echo $this->getSkinUrl('images/btn_add_to_cart_sm.gif') ?>" alt="" class="v-middle"/-->
                 </a></div>
                     
                 <?php endif; ?>
                 <br>
-                <div class="croc-delete" id="delete" style="margin-bottom:0"><a href="<?php echo $this->getItemRemoveUrl($item) ?>" onclick="return confirmRemoveWishlistItem();" class="link-remove croc-delete" ><?php echo $this->__('Remove Item') ?></a></div>               
+                <div class="" id="delete" style="margin-bottom:0"><a href="<?php echo $this->getItemRemoveUrl($item) ?>" onclick="return confirmRemoveWishlistItem();" class="link-remove croc-delete" ><?php echo $this->__('Remove Item') ?></a></div>               
                 </td>
             </tr>
         <?php endforeach ?>
@@ -93,7 +93,7 @@
         
         <?php if($this->isSaleable()):?>
         
-        <div class="f-right croc-valider" id="valider-all" style="width:200px"><a href="<?php echo $this->getUrl('*/*/allcart') ?>"><?php echo $this->__('Add All to Cart') ?><!--img src="<?php echo $this->getSkinUrl('images/btn_add_all_to_cart.gif');?>" alt="" class="v-middle"/--></a></div>
+        <div class="f-right " id="valider-all" style="width:200px"><a href="<?php echo $this->getUrl('*/*/allcart') ?>" class="croc-valider"><?php echo $this->__('Add All to Cart') ?><!--img src="<?php echo $this->getSkinUrl('images/btn_add_all_to_cart.gif');?>" alt="" class="v-middle"/--></a></div>
         
         <?php endif;?>
         
