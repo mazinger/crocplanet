@@ -1062,7 +1062,7 @@ a.minimal-price-link .price { font-weight:normal; color:#444; }
 .product-options-bottom .price-label { float:left; padding-right:5px; }
 .product-options-bottom .price-tax { float:left; }
 .product-options-bottom .add-to-cart-box { float:right; margin:0; padding:0; border:0; background:0; }
-.product-options-bottom .qty-box {margin: 15px 0;display:block;}
+.product-options-bottom .qty-box {margin:15px 0 15px 32px;;display:block;}
 
 .product-info-box .product-options-bottom .price-box { float:none; }
 .product-info-box .product-options-bottom .price-label { float:none; padding-right:0; }
