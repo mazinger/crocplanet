@@ -35,12 +35,12 @@
         <input type="hidden" name="remove" id="remove-coupone" value="0"/>
     <?php if(!strlen($this->getCouponCode())): ?>
         
-    <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/> &nbsp;<input type="image" name="do" 
+    <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/> &nbsp;<input  class="button-21-21" type="button" name="do" value=""
     	src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_ok_off.gif') ?>" 
         alt="<?php echo $this->__('Apply Coupon') ?>"/>
     <?php else: ?>
-        <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/>&nbsp;<a href="#" onclick="discountForm.submit(true)">
-        	<img src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_ok_off.gif') ?>" 
+        <input class="input-text" id="coupon_code" name="coupon_code" value="<?php echo $this->htmlEscape($this->getCouponCode()) ?>"/>&nbsp;<a class="button-21-21" href="#" onclick="discountForm.submit(true)">
+        	<img style="display:none" src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_ok_off.gif') ?>" 
             alt="<?php echo $this->__('Cancel Coupon') ?>" style="vertical-align:middle;" /></a><?php endif;?>
     </div>
     </fieldset>

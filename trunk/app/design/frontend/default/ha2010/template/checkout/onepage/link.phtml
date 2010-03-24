@@ -25,11 +25,11 @@
  */
 ?>
 <?php if ($this->isPossibleOnepageCheckout()):?>
-<li>
+<li style="clear:both">
 <?php if ($this->isDisabled()):?>
-<img src="<?php echo $this->getSkinUrl('images/btn_proceed_to_checkout_dis.gif');?>" alt="<?php echo Mage::helper('checkout')->__('Proceed to Checkout');?>" />
+<img class="right" src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/bt_finalcom_off.gif');?>" alt="<?php echo Mage::helper('checkout')->__('Proceed to Checkout');?>" />
 <?php else: ?>
-<a href="<?php echo $this->getCheckoutUrl()?>"><img src="<?php echo $this->getSkinUrl('images/btn_proceed_to_checkout.gif');?>" alt="<?php echo Mage::helper('checkout')->__('Proceed to Checkout');?>" /></a>
+<a class="right bt_finalcom" href="<?php echo $this->getCheckoutUrl()?>"><img style="display:none" src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/bt_finalcom_off.gif');?>" alt="<?php echo Mage::helper('checkout')->__('Proceed to Checkout');?>" /></a>
 <?php endif?>
 </li>
 <?php endif?>

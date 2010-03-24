@@ -51,7 +51,7 @@
             <p class="required"  style="margin-top:-179px;"><?php echo $this->__('* Required Fields') ?></p>
         </div>
         <div class="button-set">
-        	<a href="#" onclick="fbiRegister(); return false;" class="right"> <img id="fb_login_image" src="<?php echo $this->getSkinUrl('images/axiadesign/02_inscription/bt_connecface_off.gif') ?>" alt="<?php echo $this->__('Register') ?>" /> </a>
+        	<a href="#" onclick="fbiRegister(); return false;" class="right bt_connecface"> <img id="fb_login_image" src="<?php echo $this->getSkinUrl('images/axiadesign/02_inscription/bt_connecface_off.gif') ?>" alt="<?php echo $this->__('Register') ?>"  style="display:none;" /> </a>
             <span id="fbintegrator-register-loading" style="display:none;">
                 <img src="<?php echo $this->getSkinUrl('images/fbintegrator/ajax-loader.gif') ?>" class="v-middle" alt="" /> &nbsp; <?php echo $this->__('Loading...') ?> &nbsp;
             </span>
@@ -65,7 +65,7 @@
             <p><?php echo $this->__('Have an account here and on Facebook? Click the button below to login.') ?></p>
         </div>
         <div class="button-set">
-            <a href="#" onclick="fbiLogin(); return false;" class="right"> <img id="fb_login_image" src="<?php echo $this->getSkinUrl('images/axiadesign/02_inscription/bt_connecface_off.gif') ?>" alt="<?php echo $this->__('Login') ?>" /> </a>
+            <a href="#" onclick="fbiLogin(); return false;" class="right bt_connecface"> <img id="fb_login_image" src="<?php echo $this->getSkinUrl('images/axiadesign/02_inscription/bt_connecface_off.gif') ?>" alt="<?php echo $this->__('Login') ?>" style="display:none"/> </a>
             <span id="fbintegrator-login-loading" style="display:none;">
                 <img src="<?php echo $this->getSkinUrl('images/fbintegrator/ajax-loader.gif') ?>" class="v-middle" alt="" /> &nbsp; <?php echo $this->__('Loading...') ?> &nbsp;
             </span>

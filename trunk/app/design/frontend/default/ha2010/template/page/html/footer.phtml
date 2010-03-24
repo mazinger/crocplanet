@@ -57,7 +57,9 @@
     
 </div>
 
-<div id="cms_footer_links" style="text-align:center"><?php echo $this->getChildHtml('cms_footer_links') ?></div>
+<div id="cms_footer_links" style="text-align:center; width:960px; white-space:nowrap;overflow:hidden;">
+	<?php echo $this->getChildHtml('cms_footer_links') ?>
+</div>
 <div id="footer_links" style="text-align:center"><?php echo $this->getChildHtml('footer_links') ?></div>
 
 <div id="footer_copy" style="text-align:center; padding:13px;color:#000000;font-size:9px;"><?php echo $this->getCopyright() ?></div>
