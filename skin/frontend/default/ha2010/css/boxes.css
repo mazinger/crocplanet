@@ -1163,7 +1163,7 @@ td.attributes-col h4.title a        { font-weight:bold; }
 .cart-totals td                 { /*padding-left:15px;*/ font-size:20px; padding:5px;}
 .cart-totals tfoot td           { /*color:#e02f00;*/ font-size:22px; }
 .checkout-types                 { margin:4px 0; }
-.checkout-types li              { clear:both;  margin-bottom:5px; }
+.checkout-types li              { clear:both;  margin-bottom:0px; height:17px;}
 .cart-shipping-block h4         { margin:0; float:none; }
 .cart-collateral .input-text    { width:264px; margin-left:245px;}
 .cart-collateral select         { width:270px; vertical-align:top; margin-top:-16px;margin-left:245px;}
@@ -1449,7 +1449,7 @@ tr.grand_total td, p.grand_total { padding-top:5px; padding-bottom:5px; }
 .account-nav .head .title { color:#fff; }
 .account-nav li a, .account-nav li.on { padding:3px 0;  }
 .account-nav li a { display:block; font-size:14px;/* border-bottom:1px solid #ddd;*/ }
-.account-nav li a, .account-nav li a:hover { color:#5f5d5c; text-decoration:none; }
+.account-nav li a, .account-nav li a:hover { color:#5f5d5c; /*text-decoration:none;*/ }
 .account-nav li.on { /*border-bottom:1px solid #ddd;*/ font-weight:bold; color:#3460A9; font-size:14px;}
 .account-nav li.on a { border:none; padding:0; }
 .account-nav li.on a, .account-nav li.on a:hover { color:#ea7900; }

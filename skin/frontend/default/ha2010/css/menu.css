@@ -69,7 +69,7 @@
 
 .bt_ok {
 	background: url(../images/axiadesign/divers/bt_ok_off.gif) no-repeat scroll 0% 0%;
-	width:21px; height:19px;
+	width:21px; height:19px;border:none;
 }
 .bt_ok:hover {
 	background: url(../images/axiadesign/divers/bt_ok_on.gif) no-repeat scroll 0% 0%;
@@ -78,12 +78,78 @@
 
 .bt_envmess {
 	background: url(../images/axiadesign/08_footer/bt_envmess_off.gif) no-repeat scroll 0% 0%;
-	width:183px; height:19px;display:block;
+	width:183px; height:19px;display:block;border:none;
 }
 .bt_envmess:hover {
 	background: url(../images/axiadesign/08_footer/bt_envmess_on.gif) no-repeat scroll 0% 0%;
 }
 
+.bt_connecface {
+	background: url(../images/axiadesign/02_inscription/bt_connecface_off.gif) no-repeat scroll 0% 0%;
+	width:136px; height:23px;display:block;border:none;
+}
+.bt_connecface:hover {
+	background: url(../images/axiadesign/02_inscription/bt_connecface_on.gif) no-repeat scroll 0% 0%;
+}
+
+.bt_connect {
+	background: url(../images/axiadesign/02_inscription/bt_connect_off.gif) no-repeat scroll 0% 0%;
+	width:117px; height:20px;display:block;border:none;
+}
+.bt_connect:hover {
+	background: url(../images/axiadesign/02_inscription/bt_connect_on.gif) no-repeat scroll 0% 0%;
+}
+
+.bt_creac {
+	background: url(../images/axiadesign/02_inscription/bt_creac_off.gif) no-repeat scroll 0% 0%;
+	width:144px; height:20px;display:block;border:none;
+}
+.bt_creac:hover {
+	background: url(../images/axiadesign/02_inscription/bt_creac_on.gif) no-repeat scroll 0% 0%;
+}
+
+.bt_retour {
+	background: url(../images/axiadesign/divers/bt_retour_off.gif) no-repeat scroll 0% 0%;
+	width:74px; height:20px;display:block;border:none;
+}
+.bt_retour:hover {
+	background: url(../images/axiadesign/divers/bt_retour_on.gif) no-repeat scroll 0% 0%;
+}
+
+
+.bt_valider {
+	background: url(../images/axiadesign/divers/bt_valider_off.gif) no-repeat scroll 0% 0%;
+	width:74px; height:20px;display:block;border:none;
+}
+.bt_valider:hover {
+	background: url(../images/axiadesign/divers/bt_valider_on.gif) no-repeat scroll 0% 0%;
+}
+
+.bt_finalcom {
+	background: url(../images/axiadesign/06_panier/bt_finalcom_off.gif) no-repeat scroll 0% 0%;
+	width:145px; height:17px;display:block; border:none;
+}
+.bt_finalcom:hover {
+	background: url(../images/axiadesign/06_panier/bt_finalcom_on.gif) no-repeat scroll 0% 0%;
+}
+
+.bt_valider2 img{display:none}
+.bt_valider2 {
+	background: url(../images/axiadesign/06_panier/bt_valider2_off.gif) no-repeat scroll 0% 0%;
+	width:57px; height:17px;display:block; border:none; float:right;
+}
+.bt_valider2:hover {
+	background: url(../images/axiadesign/06_panier/bt_valider2_on.gif) no-repeat scroll 0% 0%;
+}
+
+.bt_suppr img{display:none}
+.bt_suppr {
+	background: url(../images/axiadesign/06_panier/bt_suppr_off.gif) no-repeat scroll 0% 0%;
+	width:13px; height:13px;display:block; border:none; margin-left:32px;
+}
+.bt_suppr:hover {
+	background: url(../images/axiadesign/06_panier/bt_suppr_on.gif) no-repeat scroll 0% 0%;
+}
 
 
 a.on {color:#3460A9}
