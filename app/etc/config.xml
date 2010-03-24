@@ -126,8 +126,8 @@
         </system>
         <general>
             <locale>
-                <code>en_US</code>
-                <timezone>America/Los_Angeles</timezone>
+                <code>fr_FR</code>
+                <timezone>Europe/Paris</timezone>
             </locale>
         </general>
     </default>
