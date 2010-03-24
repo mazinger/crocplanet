@@ -51,8 +51,9 @@
     <li><label   class="cart-label" for="postcode"><?php echo $this->__('Zip/Postal Code') ?><?php if ($this->isZipCodeRequired()):?> <span class="required">*</span><?php endif;?></label><br/>
     <input class="cart-label input-text validate-postcode<?php if ($this->isZipCodeRequired()):?> required-entry<?php endif;?>" type="text" id="postcode" name="estimate_postcode" value="<?php echo $this->htmlEscape($this->getEstimatePostcode()) ?>" /></li>
   </ul>
-    <p align="right"  style="padding-right:45px;"><a href="#" onclick="coShippingMethodForm.submit(); return false;">
-    	<img 
+    <p align="right"  style="padding-right:45px;">
+    	<a class="bt_valider2" href="#" onclick="coShippingMethodForm.submit(); return false;">
+    	<img  style="display:none"
         src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/bt_valider2_off.gif') ?>" 
         alt="<?php echo $this->__('Get a Quote') ?>"/></a></p>
        <script type="text/javascript">
@@ -77,7 +78,8 @@
                        <?php if ($_rate->getErrorMessage()): ?>
                             <?php echo $_rate->getErrorMessage() ?>
                        <?php else: ?>
-                            <input name="estimate_method" type="radio" value="<?php echo $this->htmlEscape($_rate->getCode()) ?>" id="s_method_<?php echo $_rate->getCode() ?>"<?php if($_rate->getCode()===$this->getAddressShippingMethod()) echo ' checked="checked"' ?>/>
+                            <input onclick1= "coShippingMethodForm.submit()"
+                            	name="estimate_method" type="radio" value="<?php echo $this->htmlEscape($_rate->getCode()) ?>" id="s_method_<?php echo $_rate->getCode() ?>"<?php if($_rate->getCode()===$this->getAddressShippingMethod()) echo ' checked="checked"' ?>/>
                             <img align="absmiddle" style="margin:10px" src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/logo_colissimo.gif') ?>">
                             
                             <label style="width:300px;display:inline-block;" for="s_method_<?php echo $_rate->getCode() ?>"><?php echo $_rate->getMethodTitle() ?>
@@ -99,7 +101,8 @@
             </dd>
         <?php endforeach; ?>
     </dl>
-    <p align="right" style="padding-right:45px;"><input type="image" 
+    <p align="right" style="padding-right:45px;display:none">
+    	<input class="bt_valider2" type="button" value=""
     	src="<?php echo $this->getSkinUrl('images/axiadesign/06_panier/bt_valider2_off.gif') ?>" name="do" 
         alt="<?php echo $this->__('Update Total') ?>"/></p>
 </form>

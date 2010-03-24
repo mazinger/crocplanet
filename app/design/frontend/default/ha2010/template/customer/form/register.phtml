@@ -163,11 +163,12 @@
       
       <div class="button-set" style="border:0;margin-top:0">
         
-          <a href="<?php echo $this->getBackUrl() ?>" class0="f-left croc-button" >
+          <a href="<?php echo $this->getBackUrl() ?>" class="f-left bt_retour" >
 		  	<?php //echo $this->__('Back') ?>
-            <img class="f-left" src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_retour_off.gif') ?>"></a>
+            </a>
         
-          <input type="image"  class="f-right croc-button1"  name="submit" alt=""
+          <input type="submit" style="border:none" class="right bt_valider"  value=""/>
+          <input style="display:none" type="image"  class="f-right croc-button1"  name="submit" alt=""
           	value="<?php echo $this->__('Valider') ?>" src="<?php echo $this->getSkinUrl('images/axiadesign/divers/bt_valider_off.gif') ?>"/>
         
       </div>
