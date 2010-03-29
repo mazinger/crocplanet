@@ -67,9 +67,10 @@
 #nav ul ul { top:5px; }
 
 
+.bt_ok img{display:none;}
 .bt_ok {
 	background: url(../images/axiadesign/divers/bt_ok_off.gif) no-repeat scroll 0% 0%;
-	width:21px; height:19px;border:none;
+	width:21px; height:19px;border:none;float:left;
 }
 .bt_ok:hover {
 	background: url(../images/axiadesign/divers/bt_ok_on.gif) no-repeat scroll 0% 0%;
@@ -159,6 +160,15 @@
 }
 .bt_ajpanier:hover {
 	background: url(../images/axiadesign/05_fichprod/bt_ajpanier_on.gif) no-repeat scroll 0% 0%;
+}
+
+.bt_ajselec img{display:none}
+.bt_ajselec {
+	background: url(../images/axiadesign/05_fichprod/bt_ajselec_off.gif) no-repeat scroll 0% 0%;
+	width:196px; height:22px;display:block; border:none; margin-left:11px;
+}
+.bt_ajselec:hover {
+	background: url(../images/axiadesign/05_fichprod/bt_ajselec_on.gif) no-repeat scroll 0% 0%;
 }
 
 
