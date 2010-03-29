@@ -71,7 +71,7 @@
                         <li><a href="<?php echo $this->getPageUrl($_page) ?>"><?php echo $_page ?></a></li>
                     <?php endif ?>
                 <?php endforeach;; ?>
-                <?php if (1 || !$this->isLastPage()): ?>
+                <?php if (!$this->isLastPage()): ?>
                     <li>
                         <a href="<?php echo $this->getNextPageUrl() ?>">
                         	<img src="<?php echo $this->getSkinUrl('images/axiadesign/04_boutik/bt_next_on.gif') ?>" 
