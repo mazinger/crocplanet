@@ -59,7 +59,7 @@
             <?php echo $this->getChildHtml('alert_urls') ?>
             <?php echo $this->getChildHtml('product_type_data') ?>
             <?php echo $this->getChildHtml('tierprices') ?>
-
+			<div style="clear:both;height:17px"></div>
             <?php if ($_product->getShortDescription()):?>
                 <h4 class="border-head"><?php echo $this->__('Quick Overview') ?></h4>
                 <div class="short-description"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>

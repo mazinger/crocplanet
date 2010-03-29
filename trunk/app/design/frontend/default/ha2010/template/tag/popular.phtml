@@ -27,9 +27,9 @@
 <div class="box base-mini mini-product-tags">
     <div class="head">
         <h4 class="title"><?php echo $this->__('Popular Tags'); ?></h4>
-        <a href="<?php echo $this->getUrl('tag/list') ?>"><?php echo $this->__('View All') ?></a>
+        <a href="<?php echo $this->getUrl('tag/list') ?>" style="color:#fff;text-transform:lowercase;"><?php echo $this->__('View All') ?></a>
     </div>
-    <div class="content">
+    <div class="content" style="font-size:14px">
         <ul>
             <?php foreach ($this->getTags() as $_tag): ?>
                 <li><a href="<?php echo $_tag->getTaggedProductsUrl() ?>" style="font-size:<?php echo $_tag->getRatio()*70+75 ?>%;"><?php echo $this->htmlEscape($_tag->getName()) ?></a></li>
