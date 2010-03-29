@@ -37,7 +37,7 @@
 .col2-set .col-2 { float:right; }
 
 .login-box .col-1, .login-box .col-2 {
-	border:1px solid #000000; padding:20px; width:45%; height:200px;
+	border:1px solid #000000; padding:15px; width:440px; height:200px;
 	font-family:arial,helvetica,sans-serif;
 	font-size:12px;
 }
@@ -157,16 +157,19 @@ p.required { text-align:right; }
 
 
 /********************** Tabs */
-.tabs                   { margin-bottom:15px; border-bottom:1px solid #666; background:url(../images/tabs_bg.gif) repeat-x 0 100% #f2f2f2; }
-.tabs li                { float:left; border-right:1px solid #a4a4a4; border-left:1px solid #fff; font-size:1.1em; line-height:1em; }
+.tabs                   { /* margin-bottom:15px;border-bottom:1px solid #aaa; */
+	background: transparent url(../images/axiadesign/divers/pix.gif) repeat-x 0 25px; */}
+.tabs li                { float:left; /*border-right:1px solid #a4a4a4; border-left:1px solid #fff; */ 
+	font-size:1.1em; line-height:1em; text-transform:uppercase; }
 .tabs li.first          { border-left:0; }
 .tabs li.last           { border-right:0; }
-.tabs a                 { display:block; padding:6px 15px; color:#444; }
-.tabs a:hover           { background-color:#ddd; text-decoration:none; color:#444; }
+.tabs a                 { display:block; padding:6px 15px; color:#444; /*border-bottom:1px solid #aaa;*/}
+.tabs a:hover           { background-color:#ddd; text-decoration:none; color:#444; border-bottom:1px solid #aaa;}
 .tabs li.active a,
-.tabs li.active a:hover { background-color:#666; font-weight:bold; color:#fff; }
+.tabs li.active a:hover { /*background-color:#666;*/ font-weight:bold; color:#222; border:1px solid #aaa; border-bottom:1px solid #fff;}
 
-
+#product_tabs_description_contents, #product_tabs_upsell_products_contents , #product_tabs_tags_contents
+	{border-right:1px solid #AAAAAA; padding:15px;}
 /********************** Headings */
 
 .head,
@@ -239,7 +242,7 @@ td.label        { font-weight:bold; }
 .data-table tfoot { border-bottom:1px solid #d9dde3; }
 .data-table tfoot tr.first {}
 .data-table tfoot tr { background-color:#f3f3f3 !important; }
-.data-table tbody td { border-bottom:1px solid #d9dde3; }
+.data-table tbody td { border-bottom:1px solid #d9dde3; vertical-align:middle;}
 /* Bundle Product row */
 .data-table tbody.odd tr { background:#fff; }
 .data-table tbody.even tr { background:#fcfcfc; }
@@ -357,6 +360,13 @@ table.pager li img {vertical-align:middle;}
 
 .layout-1column-cms .f-right {width:718px; padding:15px; text-align:justify}
 .layout-1column-cms  label {#000}
+
+.layout-1column-email button {border:1px solid #000; background-color:#000; 
+	color:#fff ;padding:0 15px; cursor:pointer;
+	text-transform:uppercase;}
+.layout-1column-email button:hover {
+	background-color:#fff; 
+	color:#000 ;}
 
 .layout-2columns {}
 .layout-3columns {}
@@ -702,7 +712,7 @@ h1#logo                 { float:left; padding-left:18px;}
 .footer ul a                    { /*background:url(../images/links_separator.gif) no-repeat 100% 50%;*/ /*padding-right:5px; margin-right:3px;*/ color:#000}
 .footer ul,
 .footer li                      { display:inline-block; font-weight:bold; }
-.footer li  					{ /*border-right:1px solid #fff;*/ padding:0 23px;}
+.footer li  					{ /*border-right:1px solid #fff;*/ padding:0 21px;}
 .footer li.last					{ border-right:0px solid;}
 .footer a,
 .footer a:hover                 { color:#444; }
@@ -1644,3 +1654,9 @@ table.print .price-incl-tax .price { display:inline; }
 ul.catalogcolors {display: block; float: left; width: 100%;}
 .catalogcolors li {display: block; float: left;}
 .catalogcolors li.selected {background: url(../images/border.png) no-repeat;}
+
+.mention {
+float:right; border-top:1px solid #aaa; color:#aaa;height:23px;
+text-align:right;
+width:100%;
+}
